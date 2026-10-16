@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#08060d;--surface:#110e1a;--surface2:#171222;--text:#f7f3ff;--muted:#a9a0b8;--line:rgba(255,255,255,.11);--accent:#b15cff;--accent2:#6b39f4;--card-radius:22px;--shadow:0 20px 70px #0005;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;overflow-x:hidden;transition:background .35s,color .35s}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,.aesthetic-card:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.ambient{position:fixed;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(90px);opacity:.18}.ambient-one{width:390px;height:390px;background:#812eff;top:120px;right:-170px}.ambient-two{width:300px;height:300px;background:#3021bc;top:750px;left:-180px}
+.topbar{min-height:76px;padding:0 clamp(18px,5vw,76px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(18px);gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.06em;font-size:21px;white-space:nowrap}.brand>span:last-child>span{color:var(--accent)}.brand-mark{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;font-size:20px;box-shadow:0 0 24px color-mix(in srgb,var(--accent) 35%,transparent)}.main-nav{display:flex;gap:30px;color:var(--muted);font-size:12px}.main-nav a:hover,.footer a:hover{color:var(--accent)}.top-actions{display:flex;align-items:center;gap:8px}.mode-label{font:10px 'DM Mono',monospace;text-transform:uppercase;color:var(--muted)}select{background:var(--surface);border:1px solid var(--line);color:var(--text);padding:9px 28px 9px 11px;border-radius:10px;font-size:11px;max-width:170px}.icon-button{width:36px;height:36px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);font-size:17px}
+.hero{max-width:1320px;margin:auto;min-height:590px;padding:90px clamp(20px,6vw,90px) 70px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px}.eyebrow{font:10px 'DM Mono',monospace;letter-spacing:.13em;color:var(--accent);text-transform:uppercase}.pulse{display:inline-block;width:6px;height:6px;border-radius:50%;background:#b7ff9d;box-shadow:0 0 10px #b7ff9d;margin-right:8px}.hero h1{font-size:clamp(45px,6.2vw,83px);line-height:.99;letter-spacing:-.075em;margin:23px 0 22px;font-weight:800}.gradient-text{background:linear-gradient(95deg,#f4d9ff 0%,#bd70ff 48%,#6b83ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-description{max-width:520px;color:var(--muted);font-size:14px;line-height:1.9}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.button{display:inline-flex;align-items:center;gap:20px;padding:14px 18px;border-radius:12px;font-size:12px;font-weight:700;transition:transform .2s,box-shadow .2s}.button:hover{transform:translateY(-3px)}.primary{background:linear-gradient(120deg,var(--accent),var(--accent2));box-shadow:0 8px 30px color-mix(in srgb,var(--accent) 20%,transparent);color:white}.secondary{border:1px solid var(--line);background:var(--surface)}.hero-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:36px;color:var(--muted);font:10px 'DM Mono',monospace}.hero-meta strong{color:var(--text);font-size:14px}.meta-dot{width:3px;height:3px;background:var(--accent);border-radius:50%}
+.hero-art{height:400px;position:relative;display:grid;place-items:center;isolation:isolate}.hero-art:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:linear-gradient(135deg,#d76aff,#6636e9 55%,#262c9c);filter:blur(2px);box-shadow:0 0 100px #8737ff66;transform:rotate(-25deg);z-index:-1}.orb{position:absolute;border-radius:50%;z-index:1}.orb-main{width:225px;height:225px;background:radial-gradient(circle at 28% 23%,#fff 0,#f1c5ff 4%,#b451ff 20%,#6928df 58%,#1a1551 100%);box-shadow:inset -20px -24px 45px #14092b99,0 25px 65px #5b1acb88}.orb-small{width:70px;height:70px;right:12%;top:16%;background:radial-gradient(circle at 30% 25%,#fff,#80f5ff 14%,#3977f6 60%,#2630a0);box-shadow:0 0 40px #4888ff88}.orbit{position:absolute;border:1px solid #c59aff66;border-radius:50%;width:330px;height:120px;transform:rotate(-34deg)}.orbit-b{transform:rotate(55deg);width:310px;height:160px;border-color:#8a77ff55}.glass-card{position:absolute;padding:15px 17px;background:linear-gradient(135deg,#ffffff1c,#ffffff05);border:1px solid #ffffff35;backdrop-filter:blur(18px);border-radius:15px;box-shadow:0 20px 50px #0003;display:flex;flex-direction:column;gap:6px}.glass-card span,.glass-card small{font:8px 'DM Mono',monospace;color:#d3c6ed}.glass-card b{font-size:27px;letter-spacing:-.08em}.card-a{top:9%;left:0;transform:rotate(-7deg)}.card-b{bottom:8%;right:0;transform:rotate(5deg)}.tiny-spark{color:#82efff;font-size:15px}.art-cross{position:absolute;bottom:22%;left:15%;font-size:28px;color:#d9c2ff}
+.ticker{overflow:hidden;border-block:1px solid var(--line);background:var(--surface);padding:15px 0;white-space:nowrap}.ticker div{font:10px 'DM Mono',monospace;letter-spacing:.17em;color:var(--muted);display:flex;justify-content:space-around;gap:30px;min-width:900px}.ticker span{color:var(--accent)}
+.section{max-width:1320px;margin:auto;padding:100px clamp(20px,6vw,90px)}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:35px}.section-heading h2,.about-copy h2{font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.065em;margin:10px 0}.heading-period{color:var(--accent)}.section-intro{font-size:13px;color:var(--muted);line-height:1.7}.section-index{font:10px 'DM Mono',monospace;color:var(--muted);padding-bottom:10px}
+.catalog-tools{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:24px;flex-wrap:wrap}.search-box{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);padding:0 14px;border-radius:12px;min-width:min(100%,280px);height:44px;flex:0 1 350px}.search-box span{font-size:23px;color:var(--muted)}.search-box input{background:none;border:0;outline:0;color:var(--text);width:100%;font-size:12px}.filter-row{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid var(--line);border-radius:100px;padding:9px 13px;background:transparent;color:var(--muted);font-size:10px}.filter.active,.filter:hover{background:var(--surface2);border-color:var(--accent);color:var(--text)}
+.aesthetic-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.aesthetic-card{border:1px solid var(--line);background:var(--surface);border-radius:var(--card-radius);overflow:hidden;min-width:0;transition:transform .25s,border-color .25s,background .3s;cursor:pointer}.aesthetic-card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--accent) 65%,transparent)}.aesthetic-art{height:165px;position:relative;overflow:hidden;display:grid;place-items:center;background:var(--artbg,#1d1730)}.aesthetic-art:before,.aesthetic-art:after{content:"";position:absolute;border-radius:50%;filter:blur(1px)}.aesthetic-art:before{width:140px;height:140px;left:calc(50% - 70px);top:calc(50% - 70px);background:var(--art1,#b15cff);box-shadow:0 0 60px color-mix(in srgb,var(--art1,#b15cff) 50%,transparent)}.aesthetic-art:after{width:65px;height:65px;right:15%;top:15%;background:var(--art2,#72e6ff);opacity:.8}.art-word{position:relative;z-index:2;font-size:clamp(16px,2vw,24px);font-weight:800;letter-spacing:-.08em;color:white;text-shadow:0 2px 20px #0008;text-align:center;padding:0 8px}.art-tag{position:absolute;left:12px;bottom:11px;z-index:3;font:8px 'DM Mono',monospace;color:#fff9;letter-spacing:.1em}.card-content{padding:16px}.card-topline{display:flex;justify-content:space-between;align-items:center;gap:8px}.category-tag{font:8px 'DM Mono',monospace;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}.card-arrow{color:var(--muted);font-size:17px}.card-content h3{font-size:16px;letter-spacing:-.04em;margin:10px 0 7px}.card-content p{font-size:11px;color:var(--muted);line-height:1.65;margin:0;min-height:54px}.card-bottom{margin-top:15px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font:8px 'DM Mono',monospace;gap:8px}.catalog-footer{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;gap:15px}.text-button{border:0;background:none;color:var(--text);font-weight:700;font-size:11px;padding:0}.text-button span{color:var(--accent);margin-left:7px}.text-button:hover{color:var(--accent)}.empty-state{color:var(--muted);padding:30px;text-align:center}
+.experiences-section{padding-top:55px}.experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.experience-card{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--surface)}.exp-visual{height:270px;position:relative;overflow:hidden}.water-visual{background:linear-gradient(180deg,#79d8f7 0%,#c7f5ff 55%,#4ab9dc 56%,#1776b3 100%)}.sun{position:absolute;width:100px;height:100px;right:15%;top:15%;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff,#e5ff9b 18%,#75edb6 62%,#4cc1d0);box-shadow:0 0 40px #e4fff9}.cloud{position:absolute;width:150px;height:42px;background:#ffffffc9;border-radius:50px;filter:drop-shadow(0 8px 8px #1c7fa522)}.cloud:before,.cloud:after{content:"";position:absolute;background:inherit;border-radius:50%}.cloud:before{width:65px;height:65px;left:25px;top:-28px}.cloud:after{width:75px;height:75px;right:20px;top:-38px}.cloud-one{top:32%;left:10%}.cloud-two{top:18%;left:45%;transform:scale(.65)}.water-wave{position:absolute;left:-10%;width:120%;height:105px;bottom:-36px;background:linear-gradient(180deg,#68e4e2,#087ab2);border-radius:50% 50% 0 0;box-shadow:0 -9px 22px #ffffff8a}.bubble{position:absolute;border:2px solid #ffffffb8;border-radius:50%;background:linear-gradient(135deg,#ffffff8c,#70dfff2b);box-shadow:inset -5px -5px 12px #006ca533}.bubble-one{width:42px;height:42px;left:20%;bottom:30px}.bubble-two{width:23px;height:23px;right:25%;bottom:48px}.visual-label{position:absolute;bottom:16px;left:20px;font:9px 'DM Mono',monospace;letter-spacing:.2em;color:#fff;text-shadow:0 1px 6px #00719d}.exp-body{padding:25px}.exp-body h3{font-size:25px;letter-spacing:-.06em;margin:12px 0}.exp-body>p:not(.eyebrow){font-size:12px;line-height:1.8;color:var(--muted);max-width:480px;margin-bottom:23px}.retro-visual{background:#100c28;background-image:radial-gradient(#b1a2ff66 1px,transparent 1px);background-size:19px 19px;display:grid;place-items:center}.retro-window{width:70%;padding:13px;background:#e3e1e8;color:#21123d;border:4px ridge #a5a1b3;box-shadow:8px 8px 0 #ff52b6;transform:rotate(-2deg);text-align:center}.retro-title{background:#252063;color:#fff;padding:7px;font:bold 10px 'DM Mono',monospace}.retro-stars{color:#ef3dba;letter-spacing:8px;margin:12px 0}.retro-gif{display:inline-block;background:repeating-linear-gradient(45deg,#ff64bc 0 5px,#fff 5px 10px);border:2px dashed #3d2a80;padding:15px 18px;font:bold 12px 'DM Mono',monospace;color:#2c1b68}.retro-links{font:8px 'DM Mono',monospace;margin-top:12px}.retro-stamp{position:absolute;bottom:15px;right:20px;color:#ffb9ef;font:10px 'DM Mono',monospace;transform:rotate(-8deg)}
+.about-section{display:grid;grid-template-columns:.65fr 1.35fr;gap:60px;align-items:start;border-top:1px solid var(--line)}.about-mark{font-size:150px;line-height:1;color:var(--accent);text-shadow:0 0 80px color-mix(in srgb,var(--accent) 35%,transparent);text-align:center}.about-copy>p:not(.eyebrow){max-width:620px;color:var(--muted);font-size:13px;line-height:1.9}.about-points{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}.about-points div{display:flex;flex-direction:column;gap:9px;border-top:1px solid var(--line);padding-top:14px}.about-points b{font:10px 'DM Mono',monospace;color:var(--accent)}.about-points span{font-size:13px;font-weight:800}.about-points small{color:var(--muted);font-size:10px;line-height:1.6}.footer{padding:25px clamp(20px,6vw,90px);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--muted);font-size:10px}.footer .brand{color:var(--text);font-size:17px}.footer .brand-mark{width:25px;height:25px;font-size:16px}
+.detail-dialog{width:min(680px,calc(100% - 28px));max-height:85vh;overflow:auto;border:1px solid var(--line);border-radius:22px;background:var(--surface);color:var(--text);padding:35px;box-shadow:0 30px 120px #0009}.detail-dialog::backdrop{background:#05020bc9;backdrop-filter:blur(8px)}.dialog-close{position:sticky;float:right;top:0;border:1px solid var(--line);background:var(--surface2);color:var(--text);width:35px;height:35px;border-radius:50%;font-size:24px;line-height:1;z-index:2}.detail-dialog h2{font-size:clamp(28px,5vw,42px);letter-spacing:-.06em;margin:12px 0}.detail-dialog h3{font-size:15px;margin:25px 0 8px}.detail-dialog p,.detail-dialog li{font-size:13px;line-height:1.9;color:var(--muted)}.detail-dialog .detail-hero{height:145px;border-radius:15px;margin:15px 0 25px;display:grid;place-items:center;font-size:38px;font-weight:800;letter-spacing:-.07em;color:white;text-align:center;padding:12px}.detail-pills{display:flex;gap:7px;flex-wrap:wrap}.detail-pills span{padding:7px 10px;border:1px solid var(--line);border-radius:30px;font:9px 'DM Mono',monospace;color:var(--accent)}.detail-callout{padding:16px;border-left:3px solid var(--accent);background:var(--surface2);color:var(--text);font-size:12px;line-height:1.8;margin-top:20px}.experience-dialog{width:min(780px,calc(100% - 28px))}.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}.feature-tile{padding:17px;background:var(--surface2);border:1px solid var(--line);border-radius:14px}.feature-tile b{display:block;font-size:13px;margin-bottom:7px}.feature-tile p{font-size:11px;margin:0}
+body[data-mode="aero"]{--bg:#c8f3f8;--surface:#efffff;--surface2:#d8f8ff;--text:#114d72;--muted:#3c7b95;--line:#4cbbd555;--accent:#00a9c7;--accent2:#54d6a7;--shadow:0 20px 60px #168eb522;color-scheme:light;background-image:radial-gradient(ellipse at 20% 10%,#fff 0,transparent 28%),linear-gradient(145deg,#bdeffb,#ddfff1 55%,#b0e5f6)}body[data-mode="aero"] .ambient{opacity:.25;background:#fff}body[data-mode="aero"] .topbar{background:#eaffffbd;box-shadow:0 4px 25px #1387a11b}body[data-mode="aero"] .brand-mark{background:linear-gradient(135deg,#5ee7f5,#24bd9d);box-shadow:inset 0 2px 5px #ffffffaa,0 5px 12px #1684a333}body[data-mode="aero"] .hero h1{color:#14638b}body[data-mode="aero"] .gradient-text{background:linear-gradient(90deg,#04a5cf,#35c8a4);background-clip:text}body[data-mode="aero"] .hero-art:before{background:linear-gradient(135deg,#fff,#63e3f0 40%,#1da7cb 70%,#4de3b0);box-shadow:0 0 90px #3ec5d855}body[data-mode="aero"] .orb-main{background:radial-gradient(circle at 28% 23%,#fff 0,#a8fff4 12%,#38d2d0 45%,#168bc5 100%);box-shadow:inset -20px -24px 45px #08759b55,0 25px 65px #2aaac555}body[data-mode="aero"] .orbit{border-color:#ffffffc9}body[data-mode="aero"] .glass-card{background:linear-gradient(135deg,#ffffffb5,#ffffff30);border-color:#ffffffd9;box-shadow:0 12px 30px #2388a322;color:#145b7b}body[data-mode="aero"] .glass-card span,body[data-mode="aero"] .glass-card small{color:#276e89}body[data-mode="aero"] .aesthetic-card,body[data-mode="aero"] .experience-card{box-shadow:0 10px 25px #167e9414}body[data-mode="aero"] .primary{background:linear-gradient(120deg,#16bfd5,#28cfa3);color:white;box-shadow:0 8px 20px #14a9bb44}body[data-mode="aero"] .ticker{background:#e8ffffb5}body[data-mode="aero"] .detail-dialog{background:#edffff}
+body[data-mode="classic"]{--bg:#f5f5f7;--surface:#fff;--surface2:#eeeeF3;--text:#20212a;--muted:#6d7080;--line:#dfe0e8;--accent:#6545d8;--accent2:#3d71d8;color-scheme:light;background-image:none}body[data-mode="classic"] .ambient{display:none}body[data-mode="classic"] .topbar{background:#fffffff0}body[data-mode="classic"] .hero-art:before{background:linear-gradient(135deg,#ddd0ff,#9c8be9,#6b7dd8);box-shadow:0 0 60px #9c8be955}body[data-mode="classic"] .orb-main{background:radial-gradient(circle at 28% 23%,#fff,#d6c9ff 20%,#8871e9 60%,#4a4ca2)}body[data-mode="classic"] .glass-card{background:#ffffffb9;border-color:#fff;color:#38304e}body[data-mode="classic"] .glass-card span,body[data-mode="classic"] .glass-card small{color:#625b78}body[data-mode="classic"] .aesthetic-card,body[data-mode="classic"] .experience-card{box-shadow:0 4px 15px #17172a08}body[data-mode="classic"] .primary{background:#6545d8}body[data-mode="classic"] .ticker{background:#fff}
+body[data-mode="retro"]{--bg:#100b25;--surface:#1a1238;--surface2:#2b1a51;--text:#fff1fb;--muted:#c0a7da;--line:#8d68b755;--accent:#ff66c4;--accent2:#6bf7e5;--card-radius:4px;color-scheme:dark;font-family:'DM Mono',monospace;background-image:radial-gradient(#a87aff22 1px,transparent 1px);background-size:16px 16px}body[data-mode="retro"] .topbar{border-bottom:3px double #b78dff;background:#160e2df0}body[data-mode="retro"] .brand{font-family:Manrope,sans-serif;letter-spacing:-.08em}body[data-mode="retro"] .brand-mark{border-radius:0;background:linear-gradient(135deg,#ff66c4,#714cff);box-shadow:3px 3px 0 #69ffe1}body[data-mode="retro"] .hero h1{text-shadow:3px 3px 0 #7836b9}body[data-mode="retro"] .gradient-text{background:linear-gradient(90deg,#ff8bd8,#79ffed);background-clip:text}body[data-mode="retro"] .aesthetic-card,body[data-mode="retro"] .experience-card{border:2px ridge #a989ce;border-radius:3px;box-shadow:4px 4px 0 #ed5ab5}body[data-mode="retro"] .aesthetic-art{border-bottom:2px ridge #a989ce}body[data-mode="retro"] .button{border-radius:3px;border:2px outset #b6a1da}body[data-mode="retro"] .primary{background:linear-gradient(90deg,#a63ed9,#e84eb4)}body[data-mode="retro"] .secondary{background:#261c4a}body[data-mode="retro"] .ticker{border-block:3px double #b78dff;background:#1c123c}body[data-mode="retro"] .filter{border-radius:3px;border-style:outset}body[data-mode="retro"] .filter.active{background:#4a2874;border-color:#ff66c4}body[data-mode="retro"] .search-box{border-radius:3px;border:2px inset #a989ce}body[data-mode="retro"] .exp-body{background:#1b123b}body[data-mode="retro"] .detail-dialog{border:3px ridge #a989ce;border-radius:4px;background:#1b123b}body[data-mode="retro"] .detail-dialog h2{text-shadow:2px 2px #9e35c4}
+body.light-override{--bg:#f4f2f8;--surface:#fff;--surface2:#ece8f5;--text:#211d2a;--muted:#686174;--line:#ded7e8;color-scheme:light;background-image:none}body.light-override .topbar{background:#ffffffdd}body.light-override .hero h1{color:var(--text)}body.light-override .gradient-text{background:linear-gradient(95deg,#8052c8,#536fcb);background-clip:text}
+@media(max-width:1050px){.hero{grid-template-columns:1fr .8fr;gap:10px;padding-top:65px}.hero-art{transform:scale(.85);margin-inline:-25px}.aesthetic-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.main-nav{gap:15px}.topbar{padding-inline:20px}}
+@media(max-width:760px){.topbar{height:auto;min-height:68px;flex-wrap:wrap;padding:12px 16px;gap:10px}.main-nav{order:3;width:100%;justify-content:center;padding:8px 0 1px;border-top:1px solid var(--line)}.top-actions{margin-left:auto}.mode-label{display:none}select{max-width:145px;font-size:10px;padding:8px}.hero{display:flex;flex-direction:column;align-items:stretch;padding:58px 22px 35px;gap:0}.hero h1{font-size:clamp(48px,13vw,70px)}.hero-art{height:280px;transform:scale(.85);margin:-5px 0 0}.hero-description{font-size:13px}.hero-meta{gap:8px}.section{padding:65px 20px}.section-heading{align-items:start}.section-heading h2{font-size:37px}.aesthetic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.experience-grid{grid-template-columns:1fr}.about-section{grid-template-columns:1fr;gap:25px}.about-mark{font-size:100px;text-align:left}.about-points{grid-template-columns:1fr;gap:20px}.section-index{display:none}.detail-dialog{padding:24px 20px}.feature-grid{grid-template-columns:1fr}.footer{flex-wrap:wrap}}
+@media(max-width:460px){.brand{font-size:18px}.topbar{gap:12px}.main-nav{gap:20px;font-size:11px}.hero{padding-inline:18px}.hero h1{font-size:clamp(43px,12vw,58px)}.hero-art{height:245px;margin-inline:-15px;transform:scale(.75)}.hero-buttons{flex-direction:column}.button{justify-content:space-between}.section{padding-inline:16px}.section-heading{flex-direction:column;gap:8px}.aesthetic-grid{grid-template-columns:1fr}.aesthetic-art{height:190px}.card-content p{min-height:0}.catalog-tools{align-items:stretch}.search-box{flex-basis:100%;min-width:0}.filter-row{gap:6px}.filter{padding:8px 10px}.exp-body{padding:20px}.exp-body h3{font-size:22px}.detail-dialog{padding:22px 16px;max-height:90vh}.detail-dialog .detail-hero{font-size:28px}.footer{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* FRUTIGER AERO VISUAL PASS — scoped only to this mode */
+body[data-mode="aero"] .hero-art{
+  height:410px; border:1px solid #ffffffd9; border-radius:26px; overflow:hidden;
+  background: url("frutiger-aero-world.png") center 52% / cover no-repeat;
+  box-shadow:0 20px 55px #0877a733, inset 0 1px 0 #ffffffd9;
+}
+body[data-mode="aero"] .hero-art::before{content:"";inset:0;width:auto;height:auto;border-radius:0;filter:none;transform:none;z-index:0;background:linear-gradient(180deg,#ffffff12,#005a7a12 70%,#003a5a55);box-shadow:none}
+body[data-mode="aero"] .hero-art .orb,
+body[data-mode="aero"] .hero-art .orbit,
+body[data-mode="aero"] .hero-art .glass-card,
+body[data-mode="aero"] .hero-art .art-cross{display:none}
+body[data-mode="aero"] .hero h1{text-shadow:0 2px 0 #ffffff88}
+body[data-mode="aero"] .topbar{border-bottom:1px solid #ffffffc9;backdrop-filter:blur(22px) saturate(1.35)}
+body[data-mode="aero"] .brand-mark{border:1px solid #ffffffd9;border-radius:11px}
+body[data-mode="aero"] .button{border-radius:13px;border:1px solid #ffffffa8;box-shadow:inset 0 1px 0 #ffffffb8,0 5px 12px #0877a322}
+body[data-mode="aero"] .secondary{background:linear-gradient(180deg,#ffffffd9,#c9f5ff9c);color:#125a78;border-color:#ffffff}
+body[data-mode="aero"] .aesthetic-card,
+body[data-mode="aero"] .experience-card{border:1px solid #ffffffed;background:linear-gradient(145deg,#ffffffd9,#dcfbffb8);box-shadow:0 12px 28px #087fa522,inset 0 1px 0 #fff;backdrop-filter:blur(12px)}
+body[data-mode="aero"] .aesthetic-card:hover,
+body[data-mode="aero"] .experience-card:hover{border-color:#ffffff;box-shadow:0 18px 35px #087fa533,inset 0 1px 0 #fff}
+body[data-mode="aero"] .aesthetic-card[data-id="frutiger-aero"] .aesthetic-art{
+  background:url("frutiger-aero-world.png") center 55%/cover no-repeat!important;
+}
+body[data-mode="aero"] .aesthetic-card[data-id="frutiger-aero"] .aesthetic-art::before,
+body[data-mode="aero"] .aesthetic-card[data-id="frutiger-aero"] .aesthetic-art::after{display:none}
+body[data-mode="aero"] .aesthetic-card[data-id="frutiger-aero"] .art-word{font-size:25px;text-shadow:0 2px 12px #003d5ccc,0 1px 2px #003d5c}
+body[data-mode="aero"] .water-visual{background:url("frutiger-aero-world.png") center 58%/cover no-repeat}
+body[data-mode="aero"] .water-visual .sun,
+body[data-mode="aero"] .water-visual .cloud,
+body[data-mode="aero"] .water-visual .water-wave{display:none}
+body[data-mode="aero"] .water-visual .bubble{border-color:#ffffffed;box-shadow:inset 3px 3px 8px #ffffffd9,inset -5px -7px 13px #087fa544,0 0 14px #ffffff8c}
+body[data-mode="aero"] .visual-label{padding:9px 12px;border:1px solid #ffffffa8;border-radius:10px;background:#007bb766;backdrop-filter:blur(12px)}
+body[data-mode="aero"] .ticker{border-color:#ffffffd9;background:linear-gradient(90deg,#d8fbffdd,#f5fffcdd,#c4f6ffdd);box-shadow:inset 0 1px 0 #fff}
+body[data-mode="aero"] .ticker span{color:#009eb8}
+body[data-mode="aero"] .detail-dialog{border:1px solid #ffffff;background:linear-gradient(145deg,#f5ffff,#dffaff);box-shadow:0 25px 90px #006b8b55}
+body[data-mode="aero"] .feature-tile{background:linear-gradient(145deg,#ffffffd9,#c9f3ffb8);border-color:#ffffff;box-shadow:inset 0 1px 0 #fff,0 5px 16px #087fa511}
+body[data-mode="aero"] .detail-callout{background:linear-gradient(120deg,#c7f6ff,#dcfff0);border-color:#00a9c7}
+body[data-mode="aero"] .aesthetic-card[data-id="frutiger-aero"] .card-content{background:linear-gradient(180deg,#f4ffff,#dcfaff)}
+@media(max-width:760px){body[data-mode="aero"] .hero-art{width:100%;height:255px;transform:none;margin:14px 0 0;border-radius:20px}}
+@media(max-width:460px){body[data-mode="aero"] .hero-art{height:225px;margin:12px 0 0}}
+
+body[data-mode="aero"] .frutiger-detail-hero{min-height:210px;border:1px solid #ffffff;box-shadow:inset 0 1px 0 #ffffffd9,0 10px 24px #087fa522;text-shadow:0 2px 12px #003d5ccc}
+
+/* AERONATA 0.3 PREVIEW — user supplied visual worlds */
+.aesthetic-art[style*="background-image"]::before,.aesthetic-art[style*="background-image"]::after{display:none!important}.aesthetic-art[style*="background-image"] .art-word{position:relative;z-index:2;text-shadow:0 2px 12px #000,0 1px 2px #000}.aesthetic-art[style*="background-image"] .art-tag{position:relative;z-index:2;text-shadow:0 1px 6px #000}
+.detail-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.detail-gallery img{width:100%;height:220px;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+.music-player{position:fixed;right:18px;bottom:18px;z-index:50;display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(18px);box-shadow:0 12px 35px #0005;max-width:min(360px,calc(100vw - 36px))}.music-player[hidden]{display:none}.music-player button{width:38px;height:38px;border:0;border-radius:50%;background:var(--accent);color:#fff}.music-player div{display:flex;flex-direction:column;min-width:100px}.music-player b{font-size:11px}.music-player small{font-size:9px;color:var(--muted)}.music-player input{width:90px;accent-color:var(--accent)}
+body[data-mode="aero"]{background-image:linear-gradient(#dffcffd9,#dffcffd9),url("assets/frutiger-aero/banner.jpg");background-size:cover;background-attachment:fixed}body[data-mode="aero"] .hero-art{background:url("assets/frutiger-aero/banner.jpg") center/cover no-repeat!important}body[data-mode="aero"] .water-visual{background:url("assets/frutiger-aero/banner.jpg") center/cover no-repeat!important}
+body[data-mode="dark-aero"]{--bg:#05080d;--surface:#0b1420;--surface2:#101d2a;--text:#e9f7ff;--muted:#8da9ba;--line:#8fdcff26;--accent:#6fdcff;--accent2:#355bff;color-scheme:dark;background:linear-gradient(#030a12b8,#030a12e8),url("assets/dark-aero/banner.jpg") center/cover fixed}body[data-mode="dark-aero"] .topbar{background:#07101bd9}body[data-mode="dark-aero"] .hero-art{border-radius:26px;background:url("assets/dark-aero/banner.jpg") center/cover;overflow:hidden}body[data-mode="dark-aero"] .hero-art>*{display:none}body[data-mode="dark-aero"] .primary{background:linear-gradient(120deg,#4ed7ff,#425cff)}
+body[data-mode="vaporwave"]{--bg:#190c2d;--surface:#28113e;--surface2:#371753;--text:#fff1ff;--muted:#d7addd;--line:#ff8be344;--accent:#ff70c9;--accent2:#6edcff;color-scheme:dark;background:linear-gradient(#1b0829b8,#1b0829e8),url("assets/vaporwave/banner.jpg") center/cover fixed}body[data-mode="vaporwave"] .topbar{background:#210d35db}body[data-mode="vaporwave"] .hero-art{border-radius:26px;background:url("assets/vaporwave/banner.jpg") center/cover;overflow:hidden}body[data-mode="vaporwave"] .hero-art>*{display:none}body[data-mode="vaporwave"] .gradient-text{background:linear-gradient(90deg,#ff8ed8,#7fe9ff);background-clip:text}
+body[data-mode="evil-aero"]{--bg:#08080b;--surface:#111016;--surface2:#1a1720;--text:#f5f0f7;--muted:#aaa0ad;--line:#d9c6e026;--accent:#bca6c9;--accent2:#645b73;color-scheme:dark;background:linear-gradient(#08080bb8,#08080be8),url("assets/evil-aero/banner.jpg") center/cover fixed}body[data-mode="evil-aero"] .topbar{background:#0b0a0fdc}body[data-mode="evil-aero"] .hero-art{border-radius:26px;background:url("assets/evil-aero/banner.jpg") center/cover;overflow:hidden}body[data-mode="evil-aero"] .hero-art>*{display:none}
+body[data-mode="2000s-tech"]{--bg:#e7f0f8;--surface:#f8fbff;--surface2:#dce8f5;--text:#18354d;--muted:#577087;--line:#7894b544;--accent:#3868d8;--accent2:#67b9e9;color-scheme:light;background:linear-gradient(#eef6f9d9,#eef6f9e8),url("assets/2000s-tech/banner.jpg") center/cover fixed;font-family:Arial,'Noto Sans JP',sans-serif}body[data-mode="2000s-tech"] .topbar{background:#f4f8fbdc}body[data-mode="2000s-tech"] .hero-art{border-radius:8px;background:url("assets/2000s-tech/banner.jpg") center/cover;overflow:hidden;border:1px solid #9aabc0}body[data-mode="2000s-tech"] .hero-art>*{display:none}body[data-mode="2000s-tech"] .button,body[data-mode="2000s-tech"] .aesthetic-card{border-radius:7px}body[data-mode="2000s-tech"] .primary{background:linear-gradient(#6aa8ee,#315ebf)}
+@media(max-width:600px){.detail-gallery{grid-template-columns:1fr}.detail-gallery img{height:190px}.music-player input{width:65px}}
+
+
+/* AERONATA 0.4 */
+.brand-logo{width:34px;height:34px;object-fit:contain;border-radius:9px;filter:drop-shadow(0 4px 10px color-mix(in srgb,var(--accent) 35%,transparent))}.footer .brand-logo{width:30px;height:30px}
+.top-actions{position:relative}
+.onboarding-hint{position:absolute;z-index:80;top:52px;padding:9px 12px;border:1px solid color-mix(in srgb,var(--accent) 55%,#fff);border-radius:12px;background:color-mix(in srgb,var(--surface) 92%,transparent);box-shadow:0 10px 30px #0005;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);font:10px 'DM Mono',monospace;color:var(--text);white-space:nowrap;animation:hintFloat 1.15s ease-in-out infinite}.onboarding-hint i{position:absolute;top:-22px;font-style:normal;font-size:24px;color:var(--accent);text-shadow:0 2px 10px #0005;animation:hintArrow 1.15s ease-in-out infinite}.theme-hint{right:34px}.theme-hint i{right:42px}.night-hint{right:-4px}.night-hint i{right:10px}.onboarding-hint.is-hiding{animation:hintOut .28s ease forwards;pointer-events:none}.onboarding-hint[hidden]{display:none}
+@keyframes hintFloat{50%{transform:translateY(5px)}}@keyframes hintArrow{50%{transform:translateY(-4px)}}@keyframes hintOut{to{opacity:0;transform:translateY(-8px)}}
+/* The 0.3 decorative orb was covering card artwork. Image cards now stay clean. */
+.aesthetic-art[style*="background-image"]::before,.aesthetic-art[style*="background-image"]::after{content:none!important;display:none!important}.aesthetic-art[style*="background-image"]{isolation:isolate}.aesthetic-art[style*="background-image"]::selection{background:transparent}
+/* Make supplied banners visible instead of washing them out. */
+body[data-mode="aero"]{background-image:linear-gradient(#dffcff70,#dffcff8c),url("assets/frutiger-aero/banner.jpg")!important}
+body[data-mode="aero"] .hero-art::before{background:linear-gradient(180deg,#ffffff05,transparent 65%,#003a5a33)!important}
+body[data-mode="aero"] .hero-art{background-position:center 52%!important}
+/* Frutiger Night is a dark-mode variant of Frutiger Aero, not a catalog category. */
+body[data-mode="aero"].aero-night{--bg:#04111b;--surface:#091b29;--surface2:#0d2637;--text:#eafaff;--muted:#9bc4d4;--line:#8adcf02e;--accent:#63d9ff;--accent2:#4f7dff;color-scheme:dark;background:linear-gradient(#02101a99,#02101ad9),url("assets/frutiger-night/banner-user-20261016.jpg") center/cover fixed!important}
+body[data-mode="aero"].aero-night .topbar{background:#061723d9;border-bottom-color:#7ddcf02b}
+body[data-mode="aero"].aero-night .hero h1{color:#e9fbff;text-shadow:0 2px 18px #001b2d}
+body[data-mode="aero"].aero-night .gradient-text{background:linear-gradient(90deg,#78e7ff,#7797ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="aero"].aero-night .hero-art{background:url("assets/frutiger-night/banner-user-20261016.jpg") center/cover no-repeat!important;border-color:#9cecff55;box-shadow:0 20px 60px #00152199,inset 0 1px 0 #a8efff44}
+body[data-mode="aero"].aero-night .aesthetic-card,body[data-mode="aero"].aero-night .experience-card{background:linear-gradient(145deg,#0b2331e8,#071721dc);border-color:#79d9ee33;box-shadow:0 12px 32px #00131f77}
+body[data-mode="aero"].aero-night .ticker{background:#061a25dd;border-color:#72d8ef2d}body[data-mode="aero"].aero-night .secondary{background:#0a2432cc;color:#dff9ff;border-color:#78d9ed44}
+body[data-mode="aero"].aero-night .detail-dialog{background:linear-gradient(145deg,#081c29,#06131d);border-color:#76d9ee44;box-shadow:0 25px 90px #000b}
+body[data-mode="aero"].aero-night .feature-tile{background:#0b2230;border-color:#72d9ef33}body[data-mode="aero"].aero-night .detail-callout{background:#0c2936;border-color:#63d9ff}
+body[data-mode="aero"].aero-night .water-visual{background:url("assets/frutiger-night/banner-user-20261016.jpg") center/cover no-repeat!important}
+body[data-mode="aero"].aero-night .icon-button{box-shadow:0 0 20px #62d9ff44}
+/* Smooth global changes and Safari fallbacks */
+.hero-art,.topbar,.aesthetic-card,.experience-card,.ticker,.detail-dialog,.button{transition:background .65s ease,color .45s ease,border-color .45s ease,box-shadow .55s ease,opacity .35s ease}.topbar,.music-player,.onboarding-hint{-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+@media(max-width:760px){.topbar{flex-wrap:wrap;padding-top:10px;padding-bottom:10px}.top-actions{margin-left:auto}.onboarding-hint{top:48px}.theme-hint{right:28px}.night-hint{right:-2px}body[data-mode="aero"].aero-night .hero-art{background-image:url("assets/frutiger-night/banner-user-20261016.jpg")!important;background-position:center 45%!important}.brand-logo{width:31px;height:31px}}
+@media(max-width:460px){.mode-label{display:none}.top-actions{gap:6px}select{max-width:132px}.onboarding-hint{font-size:9px;padding:8px 10px}.theme-hint{right:30px}.night-hint{right:0}.brand>span:last-child{display:none}.brand-logo{width:36px;height:36px}}
+
+
+/* AERONATA 0.4.1 — visual identity fixes */
+/* Kill the legacy purple orb in every image-based aesthetic, not only Frutiger Aero. */
+body[data-mode="aero"] .hero-art::before,
+body[data-mode="dark-aero"] .hero-art::before,
+body[data-mode="vaporwave"] .hero-art::before,
+body[data-mode="evil-aero"] .hero-art::before,
+body[data-mode="2000s-tech"] .hero-art::before,
+body[data-mode="frutiger-metro"] .hero-art::before{content:none!important;display:none!important}
+body[data-mode="aero"] .ambient,
+body[data-mode="dark-aero"] .ambient,
+body[data-mode="vaporwave"] .ambient,
+body[data-mode="evil-aero"] .ambient,
+body[data-mode="2000s-tech"] .ambient,
+body[data-mode="frutiger-metro"] .ambient{display:none!important}
+
+/* Banners stay visible: lighter page tint, localized glass keeps text readable. */
+body[data-mode="aero"]{background-image:linear-gradient(#dffcff22,#dffcff42),url("assets/frutiger-aero/banner.jpg")!important}
+body[data-mode="dark-aero"]{--bg:#020805;--surface:#07150d;--surface2:#0d2415;--text:#effff4;--muted:#9bc7a8;--line:#69ef9840;--accent:#61ef8e;--accent2:#158c45;color-scheme:dark;background:linear-gradient(#020a0568,#020a0592),url("assets/dark-aero/banner.jpg") center/cover fixed!important}
+body[data-mode="dark-aero"] .topbar{background:#041009d6}body[data-mode="dark-aero"] .primary{background:linear-gradient(120deg,#72f29a,#087c3a)}body[data-mode="dark-aero"] .gradient-text{background:linear-gradient(90deg,#c9ffd8,#55e887,#138342);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="evil-aero"]{--bg:#100300;--surface:#1b0804;--surface2:#2a0d05;--text:#fff4ed;--muted:#d9a08a;--line:#ff74433d;--accent:#ff4a22;--accent2:#ff9b21;color-scheme:dark;background:linear-gradient(#12030068,#16040092),url("assets/evil-aero/banner.jpg") center/cover fixed!important}
+body[data-mode="evil-aero"] .topbar{background:#170502d8}body[data-mode="evil-aero"] .primary{background:linear-gradient(120deg,#ff3d20,#ff9b20)}body[data-mode="evil-aero"] .gradient-text{background:linear-gradient(90deg,#ffb13b,#ff5b2b,#d51f12);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="2000s-tech"]{background:linear-gradient(#eef6f94a,#eef6f970),url("assets/2000s-tech/banner.jpg") center/cover fixed!important;font-family:'M PLUS 1p','Noto Sans JP',Arial,sans-serif!important;letter-spacing:.015em}
+body[data-mode="2000s-tech"] h1,body[data-mode="2000s-tech"] h2,body[data-mode="2000s-tech"] h3,body[data-mode="2000s-tech"] .brand{font-family:'M PLUS 1p','Noto Sans JP',Arial,sans-serif;font-weight:800;letter-spacing:-.045em}
+body[data-mode="2000s-tech"] .eyebrow,body[data-mode="2000s-tech"] .category-tag,body[data-mode="2000s-tech"] .card-bottom,body[data-mode="2000s-tech"] .hero-meta{font-family:'M PLUS 1p','Noto Sans JP',Arial,sans-serif;letter-spacing:.08em}
+
+/* Frutiger Metro: two visual/music variants controlled by the sun/moon button. */
+body[data-mode="frutiger-metro"]{--bg:#eefcff;--surface:#ffffffde;--surface2:#e8fbff;--text:#15243a;--muted:#557086;--line:#327f9d35;--accent:#ef4c9a;--accent2:#25b9cf;color-scheme:light;background:linear-gradient(#ffffff25,#dffaff4f),url("assets/frutiger-metro/banner1.jpg") center/cover fixed!important}
+body[data-mode="frutiger-metro"] .topbar{background:#f8ffffd5}body[data-mode="frutiger-metro"] .hero-art{border-radius:24px;background:url("assets/frutiger-metro/banner1.jpg") center/cover no-repeat!important;overflow:hidden;box-shadow:0 18px 55px #155c7b33}body[data-mode="frutiger-metro"] .hero-art>*{display:none}body[data-mode="frutiger-metro"] .gradient-text{background:linear-gradient(90deg,#f04e9b,#f0ad31,#20b9d0);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="frutiger-metro"].metro-2{--bg:#111326;--surface:#1a1d36e8;--surface2:#25294a;--text:#f6f5ff;--muted:#c2bfd9;--line:#87d5ff38;--accent:#7bd6ff;--accent2:#f06bb5;color-scheme:dark;background:linear-gradient(#0c102060,#10142a88),url("assets/frutiger-metro/banner2.jpg") center/cover fixed!important}
+body[data-mode="frutiger-metro"].metro-2 .topbar{background:#10142ad8}body[data-mode="frutiger-metro"].metro-2 .hero-art{background-image:url("assets/frutiger-metro/banner2.jpg")!important}body[data-mode="frutiger-metro"].metro-2 .gradient-text{background:linear-gradient(90deg,#7bd6ff,#d987ff,#ff6eaf);background-clip:text;-webkit-background-clip:text;color:transparent}
+.metro-hint{right:-4px}.metro-hint i{right:10px}
+@media(max-width:760px){.metro-hint{right:-2px}}
+@media(max-width:460px){.metro-hint{right:0;max-width:220px;white-space:normal}}
+
+/* 0.4.1.1 — readability pass: restore a soft veil without hiding the artwork. */
+body[data-mode="aero"]{
+  background-image:linear-gradient(rgba(223,252,255,.34),rgba(223,252,255,.48)),url("assets/frutiger-aero/banner.jpg")!important;
+}
+body[data-mode="dark-aero"]{
+  background:linear-gradient(rgba(2,8,5,.48),rgba(2,8,5,.66)),url("assets/dark-aero/banner.jpg") center/cover fixed!important;
+}
+body[data-mode="evil-aero"]{
+  background:linear-gradient(rgba(16,3,0,.46),rgba(20,4,0,.64)),url("assets/evil-aero/banner.jpg") center/cover fixed!important;
+}
+body[data-mode="2000s-tech"]{
+  background:linear-gradient(rgba(238,246,249,.48),rgba(238,246,249,.62)),url("assets/2000s-tech/banner.jpg") center/cover fixed!important;
+}
+body[data-mode="frutiger-metro"]{
+  background:linear-gradient(rgba(255,255,255,.40),rgba(239,252,255,.54)),url("assets/frutiger-metro/banner1.jpg") center/cover fixed!important;
+}
+body[data-mode="frutiger-metro"].metro-2{
+  background:linear-gradient(rgba(12,16,32,.48),rgba(16,20,42,.62)),url("assets/frutiger-metro/banner2.jpg") center/cover fixed!important;
+}
+/* Keep the content readable over busy banners while retaining the image itself. */
+body[data-mode="aero"] .hero-description,
+body[data-mode="2000s-tech"] .hero-description,
+body[data-mode="frutiger-metro"]:not(.metro-2) .hero-description{
+  text-shadow:0 1px 12px rgba(255,255,255,.72);
+}
+body[data-mode="dark-aero"] .hero-description,
+body[data-mode="evil-aero"] .hero-description,
+body[data-mode="frutiger-metro"].metro-2 .hero-description{
+  text-shadow:0 2px 12px rgba(0,0,0,.58);
+}
+
+/* 0.4.1.2 — contrast pass for bright/busy themes.
+   Intentionally leaves Aero Night, Dark Aero and Vaporwave untouched. */
+body[data-mode="aero"]:not(.aero-night),
+body[data-mode="2000s-tech"],
+body[data-mode="frutiger-metro"]:not(.metro-2),
+body[data-mode="evil-aero"]{
+  --hero-readable:#102f42;
+  --hero-readable-muted:#294e60;
+}
+body[data-mode="evil-aero"]{
+  --hero-readable:#fff4ef;
+  --hero-readable-muted:#ffd3c6;
+}
+body[data-mode="aero"]:not(.aero-night) .hero-description,
+body[data-mode="2000s-tech"] .hero-description,
+body[data-mode="frutiger-metro"]:not(.metro-2) .hero-description,
+body[data-mode="evil-aero"] .hero-description{
+  color:var(--hero-readable-muted)!important;
+  font-weight:550;
+  text-shadow:0 1px 2px rgba(255,255,255,.55),0 0 12px rgba(255,255,255,.28);
+}
+body[data-mode="evil-aero"] .hero-description{
+  text-shadow:0 2px 10px rgba(0,0,0,.78);
+}
+body[data-mode="aero"]:not(.aero-night) .hero-meta,
+body[data-mode="2000s-tech"] .hero-meta,
+body[data-mode="frutiger-metro"]:not(.metro-2) .hero-meta{
+  color:var(--hero-readable-muted)!important;
+  font-weight:600;
+  text-shadow:0 1px 5px rgba(255,255,255,.72);
+}
+body[data-mode="aero"]:not(.aero-night) .hero-meta strong,
+body[data-mode="2000s-tech"] .hero-meta strong,
+body[data-mode="frutiger-metro"]:not(.metro-2) .hero-meta strong{
+  color:var(--hero-readable)!important;
+}
+body[data-mode="aero"]:not(.aero-night) .eyebrow,
+body[data-mode="2000s-tech"] .eyebrow,
+body[data-mode="frutiger-metro"]:not(.metro-2) .eyebrow{
+  filter:saturate(1.15) brightness(.72);
+  font-weight:700;
+  text-shadow:0 1px 6px rgba(255,255,255,.65);
+}
+/* Metro 2 is already dark and readable; only a tiny lift for secondary copy. */
+body[data-mode="frutiger-metro"].metro-2 .hero-description,
+body[data-mode="frutiger-metro"].metro-2 .hero-meta{
+  color:#e7f5ff!important;
+  text-shadow:0 2px 10px rgba(0,0,0,.78);
+}
+
+/* 0.4.1.3 — Frutiger Metro 2 keeps the white veil/bars from Metro 1. */
+body[data-mode="frutiger-metro"].metro-2{
+  background:linear-gradient(rgba(255,255,255,.34),rgba(239,252,255,.46)),url("assets/frutiger-metro/banner2.jpg") center/cover fixed!important;
+}
+body[data-mode="frutiger-metro"].metro-2 .topbar{
+  background:rgba(248,255,255,.86)!important;
+  border-bottom-color:rgba(255,255,255,.88)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(1.15);
+  backdrop-filter:blur(18px) saturate(1.15);
+}
+body[data-mode="frutiger-metro"].metro-2 .topbar .brand,
+body[data-mode="frutiger-metro"].metro-2 .topbar .main-nav,
+body[data-mode="frutiger-metro"].metro-2 .topbar select,
+body[data-mode="frutiger-metro"].metro-2 .topbar .icon-button{
+  color:#15243a!important;
+}
+body[data-mode="frutiger-metro"].metro-2 .topbar select,
+body[data-mode="frutiger-metro"].metro-2 .topbar .icon-button{
+  background:rgba(255,255,255,.72)!important;
+  border-color:rgba(50,127,157,.25)!important;
+}
+body[data-mode="frutiger-metro"].metro-2 .ticker{
+  background:rgba(255,255,255,.88)!important;
+  border-color:rgba(255,255,255,.92)!important;
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+}
+body[data-mode="frutiger-metro"].metro-2 .ticker div{color:#557086!important}
+body[data-mode="frutiger-metro"].metro-2 .ticker span{color:#ef4c9a!important}
+
+/* 0.4.1.4 — Metro 2 changes only banner + music; interface remains the light/white Metro skin. */
+body[data-mode="frutiger-metro"].metro-2{
+  --bg:#eefcff;
+  --surface:#ffffffde;
+  --surface2:#e8fbff;
+  --text:#15243a;
+  --muted:#557086;
+  --line:#327f9d35;
+  --accent:#ef4c9a;
+  --accent2:#25b9cf;
+  color-scheme:light;
+  background:linear-gradient(rgba(255,255,255,.40),rgba(239,252,255,.54)),url("assets/frutiger-metro/banner2.jpg") center/cover fixed!important;
+}
+body[data-mode="frutiger-metro"].metro-2 .topbar{background:#f8ffffd5!important;border-bottom-color:var(--line)!important}
+body[data-mode="frutiger-metro"].metro-2 .hero-art{background:url("assets/frutiger-metro/banner2.jpg") center/cover no-repeat!important;box-shadow:0 18px 55px #155c7b33!important}
+body[data-mode="frutiger-metro"].metro-2 .hero h1{color:var(--text)!important}
+body[data-mode="frutiger-metro"].metro-2 .hero-description{color:#294e60!important;font-weight:550;text-shadow:0 1px 2px rgba(255,255,255,.65),0 0 12px rgba(255,255,255,.34)!important}
+body[data-mode="frutiger-metro"].metro-2 .hero-meta{color:#294e60!important;font-weight:600;text-shadow:0 1px 5px rgba(255,255,255,.72)!important}
+body[data-mode="frutiger-metro"].metro-2 .hero-meta strong{color:#102f42!important}
+body[data-mode="frutiger-metro"].metro-2 .eyebrow{filter:saturate(1.15) brightness(.72);font-weight:700;text-shadow:0 1px 6px rgba(255,255,255,.65)}
+body[data-mode="frutiger-metro"].metro-2 .ticker{background:rgba(255,255,255,.88)!important;border-color:rgba(255,255,255,.92)!important}
+body[data-mode="frutiger-metro"].metro-2 .secondary{background:rgba(255,255,255,.76)!important;color:#15243a!important;border-color:rgba(255,255,255,.9)!important}
+body[data-mode="frutiger-metro"].metro-2 .aesthetic-card,
+body[data-mode="frutiger-metro"].metro-2 .experience-card{color:var(--text)}
+
+/* 0.4.1.5 — Frutiger Metro variants are both LIGHT and readable.
+   Metro 1 = colorful; Metro 2 = cool blue. */
+body[data-mode="frutiger-metro"]:not(.metro-2){
+  --bg:#fffaf4;
+  --surface:rgba(255,255,255,.90);
+  --surface2:#fff7fb;
+  --text:#17243a;
+  --muted:#4d6173;
+  --line:rgba(239,76,154,.25);
+  --accent:#ef4c9a;
+  --accent2:#25bfd2;
+  color-scheme:light!important;
+  background:linear-gradient(rgba(255,255,255,.46),rgba(255,250,246,.58)),url("assets/frutiger-metro/banner1.jpg") center/cover fixed!important;
+}
+body[data-mode="frutiger-metro"]:not(.metro-2) .topbar{background:rgba(255,255,255,.91)!important;border-bottom-color:rgba(239,76,154,.18)!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .gradient-text{background:linear-gradient(90deg,#ed3f98,#f39a32,#21b9d0)!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .primary{background:linear-gradient(120deg,#ef4c9a,#f29c36 48%,#25bfd2)!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .secondary,
+body[data-mode="frutiger-metro"]:not(.metro-2) .aesthetic-card,
+body[data-mode="frutiger-metro"]:not(.metro-2) .experience-card{background:rgba(255,255,255,.84)!important;color:#17243a!important}
+
+body[data-mode="frutiger-metro"].metro-2{
+  --bg:#edf9ff;
+  --surface:rgba(248,253,255,.91);
+  --surface2:#e2f5ff;
+  --text:#102d47;
+  --muted:#42647c;
+  --line:rgba(42,146,204,.26);
+  --accent:#2d9ed6;
+  --accent2:#72d7ee;
+  color-scheme:light!important;
+  background:linear-gradient(rgba(235,249,255,.43),rgba(225,245,255,.57)),url("assets/frutiger-metro/banner2.jpg") center/cover fixed!important;
+}
+body[data-mode="frutiger-metro"].metro-2 .topbar{background:rgba(246,252,255,.91)!important;border-bottom-color:rgba(42,146,204,.22)!important;color:#102d47!important}
+body[data-mode="frutiger-metro"].metro-2 .topbar .brand,
+body[data-mode="frutiger-metro"].metro-2 .topbar .main-nav,
+body[data-mode="frutiger-metro"].metro-2 .topbar select,
+body[data-mode="frutiger-metro"].metro-2 .topbar .icon-button{color:#102d47!important}
+body[data-mode="frutiger-metro"].metro-2 .topbar select,
+body[data-mode="frutiger-metro"].metro-2 .topbar .icon-button{background:rgba(255,255,255,.80)!important;border-color:rgba(42,146,204,.25)!important}
+body[data-mode="frutiger-metro"].metro-2 .gradient-text{background:linear-gradient(90deg,#176ea8,#37b6dc,#7eddf0)!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important}
+body[data-mode="frutiger-metro"].metro-2 .primary{background:linear-gradient(120deg,#237fbd,#38b9dd,#82dff0)!important;color:#fff!important}
+body[data-mode="frutiger-metro"].metro-2 .secondary,
+body[data-mode="frutiger-metro"].metro-2 .aesthetic-card,
+body[data-mode="frutiger-metro"].metro-2 .experience-card{background:rgba(248,253,255,.86)!important;color:#102d47!important;border-color:rgba(42,146,204,.20)!important}
+body[data-mode="frutiger-metro"].metro-2 .hero h1{color:#102d47!important}
+body[data-mode="frutiger-metro"].metro-2 .hero-description{color:#294f69!important;text-shadow:0 1px 4px rgba(255,255,255,.88)!important}
+body[data-mode="frutiger-metro"].metro-2 .hero-meta{color:#294f69!important;text-shadow:0 1px 4px rgba(255,255,255,.9)!important}
+body[data-mode="frutiger-metro"].metro-2 .hero-meta strong{color:#102d47!important}
+body[data-mode="frutiger-metro"].metro-2 .ticker{background:rgba(248,253,255,.91)!important;border-color:rgba(42,146,204,.18)!important}
+body[data-mode="frutiger-metro"].metro-2 .ticker div{color:#42647c!important}
+body[data-mode="frutiger-metro"].metro-2 .ticker span{color:#2d9ed6!important}
+
+/* 0.4.1.6 — Frutiger Metro: both variants use a fully dark interface.
+   Metro 1 keeps colorful accents; Metro 2 keeps cool blue accents. */
+body[data-mode="frutiger-metro"]:not(.metro-2){
+  --bg:#080b12;--surface:rgba(12,16,25,.90);--surface2:#141a26;--text:#f7f9ff;--muted:#c8cfdb;--line:rgba(255,255,255,.14);--accent:#ff4fa3;--accent2:#25d4e6;
+  color-scheme:dark;
+  background:linear-gradient(rgba(5,7,12,.46),rgba(7,9,15,.62)),url("assets/frutiger-metro/banner1.jpg") center/cover fixed!important;
+}
+body[data-mode="frutiger-metro"]:not(.metro-2) .topbar{background:rgba(7,10,16,.90)!important;border-bottom-color:rgba(255,255,255,.12)!important;color:#fff!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .topbar .brand,
+body[data-mode="frutiger-metro"]:not(.metro-2) .topbar .main-nav,
+body[data-mode="frutiger-metro"]:not(.metro-2) .topbar select,
+body[data-mode="frutiger-metro"]:not(.metro-2) .topbar .icon-button{color:#f7f9ff!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .topbar select,
+body[data-mode="frutiger-metro"]:not(.metro-2) .topbar .icon-button{background:rgba(18,23,34,.92)!important;border-color:rgba(255,255,255,.14)!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .secondary,
+body[data-mode="frutiger-metro"]:not(.metro-2) .aesthetic-card,
+body[data-mode="frutiger-metro"]:not(.metro-2) .experience-card{background:rgba(12,16,25,.88)!important;color:#f7f9ff!important;border-color:rgba(255,255,255,.13)!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .ticker{background:rgba(8,11,18,.91)!important;border-color:rgba(255,255,255,.12)!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .ticker div{color:#d3d8e4!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .ticker span{color:#ff62b0!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .hero h1{color:#f8f9ff!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .hero-description,
+body[data-mode="frutiger-metro"]:not(.metro-2) .hero-meta{color:#e2e6ef!important;text-shadow:0 2px 8px rgba(0,0,0,.85)!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .hero-meta strong{color:#fff!important}
+body[data-mode="frutiger-metro"]:not(.metro-2) .primary{background:linear-gradient(120deg,#f44d9e,#f0a03b 48%,#22c9dc)!important;color:#fff!important}
+
+body[data-mode="frutiger-metro"].metro-2{
+  --bg:#060b13;--surface:rgba(8,17,28,.91);--surface2:#0e1c2b;--text:#f3f9ff;--muted:#bfd2e2;--line:rgba(113,205,255,.18);--accent:#53c8ff;--accent2:#87e8ff;
+  color-scheme:dark;
+  background:linear-gradient(rgba(3,10,18,.43),rgba(5,13,23,.60)),url("assets/frutiger-metro/banner2.jpg") center/cover fixed!important;
+}
+body[data-mode="frutiger-metro"].metro-2 .topbar{background:rgba(5,13,23,.91)!important;border-bottom-color:rgba(103,201,255,.16)!important;color:#f3f9ff!important}
+body[data-mode="frutiger-metro"].metro-2 .topbar .brand,
+body[data-mode="frutiger-metro"].metro-2 .topbar .main-nav,
+body[data-mode="frutiger-metro"].metro-2 .topbar select,
+body[data-mode="frutiger-metro"].metro-2 .topbar .icon-button{color:#f3f9ff!important}
+body[data-mode="frutiger-metro"].metro-2 .topbar select,
+body[data-mode="frutiger-metro"].metro-2 .topbar .icon-button{background:rgba(10,24,38,.94)!important;border-color:rgba(103,201,255,.20)!important}
+body[data-mode="frutiger-metro"].metro-2 .secondary,
+body[data-mode="frutiger-metro"].metro-2 .aesthetic-card,
+body[data-mode="frutiger-metro"].metro-2 .experience-card{background:rgba(7,17,29,.89)!important;color:#f3f9ff!important;border-color:rgba(103,201,255,.17)!important}
+body[data-mode="frutiger-metro"].metro-2 .ticker{background:rgba(5,14,24,.92)!important;border-color:rgba(103,201,255,.16)!important}
+body[data-mode="frutiger-metro"].metro-2 .ticker div{color:#c4d7e6!important}
+body[data-mode="frutiger-metro"].metro-2 .ticker span{color:#65d3ff!important}
+body[data-mode="frutiger-metro"].metro-2 .hero h1{color:#f3f9ff!important}
+body[data-mode="frutiger-metro"].metro-2 .hero-description,
+body[data-mode="frutiger-metro"].metro-2 .hero-meta{color:#d9e9f5!important;text-shadow:0 2px 8px rgba(0,0,0,.88)!important}
+body[data-mode="frutiger-metro"].metro-2 .hero-meta strong{color:#fff!important}
+body[data-mode="frutiger-metro"].metro-2 .gradient-text{background:linear-gradient(90deg,#58c9ff,#83e5ff,#b3f3ff)!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important}
+body[data-mode="frutiger-metro"].metro-2 .primary{background:linear-gradient(120deg,#187fbd,#37bce9,#74ddff)!important;color:#fff!important}
+
+/* AeroNata 0.5 — custom selector, NEW badges and new Frutiger/Dorfic interfaces */
+.native-mode-select{position:absolute!important;opacity:0!important;pointer-events:none!important;width:1px!important;height:1px!important}.mode-picker{position:relative;display:flex;align-items:center;gap:8px}.mode-trigger{min-width:174px;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--surface) 88%,transparent);color:var(--text);padding:9px 11px;display:flex;align-items:center;gap:8px;box-shadow:inset 0 1px 0 #ffffff18}.mode-spark{color:var(--accent)}.mode-chevron{margin-left:auto;color:var(--muted)}.mode-panel{display:none;position:absolute;z-index:80;right:0;top:calc(100% + 12px);width:min(520px,88vw);padding:12px;border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--surface) 94%,transparent);box-shadow:0 24px 70px #0008;backdrop-filter:blur(24px)}.mode-panel.open{display:block;animation:modePop .18s ease-out}.mode-panel-head{padding:6px 7px 12px;display:flex;flex-direction:column}.mode-panel-head b{font:10px 'DM Mono',monospace;letter-spacing:.13em;color:var(--accent)}.mode-panel-head small{color:var(--muted);margin-top:4px}.mode-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.mode-grid button{border:1px solid var(--line);background:var(--surface2);color:var(--text);border-radius:12px;padding:10px;display:flex;align-items:center;gap:9px;text-align:left;font-size:11px;min-width:0}.mode-grid button:hover,.mode-grid button.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 40%,transparent)}.mode-grid i{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 12px color-mix(in srgb,var(--accent) 55%,transparent);flex:none}.mode-grid em,.new-badge{font:700 7px 'DM Mono',monospace;letter-spacing:.08em;font-style:normal;background:var(--accent);color:#fff;border-radius:999px;padding:3px 5px}.new-badge{position:absolute;z-index:5;right:10px;top:10px;box-shadow:0 4px 16px #0005}.aesthetic-art{position:relative}@keyframes modePop{from{opacity:0;transform:translateY(-7px) scale(.98)}to{opacity:1;transform:none}}
+body[data-mode="dorfic"]{--bg:#d86a0b;--surface:#ffe5b8;--surface2:#f7bd63;--text:#572700;--muted:#87501c;--line:#8b4b16;--accent:#e86f0a;--accent2:#ffbd45;color-scheme:light;background:linear-gradient(#f59a3266,#bd530066),url("assets/dorfic/banner.png") center/cover fixed!important;font-family:Tahoma,Verdana,sans-serif}body[data-mode="dorfic"] .topbar{background:linear-gradient(#fff3d6,#efb45f);border-bottom:2px outset #ffd797;box-shadow:0 3px 0 #8d4a14}body[data-mode="dorfic"] .hero-art{background:url("assets/dorfic/banner.png") center/cover!important;border:3px outset #ffd693;border-radius:5px}body[data-mode="dorfic"] .hero-art>*{display:none}body[data-mode="dorfic"] .aesthetic-card,body[data-mode="dorfic"] .experience-card,body[data-mode="dorfic"] .mode-panel,body[data-mode="dorfic"] .detail-dialog{border-radius:4px;border:2px outset #ffdca4;background:linear-gradient(#fff4dc,#ffd18b);box-shadow:3px 4px 0 #8b4b164d}body[data-mode="dorfic"] button,body[data-mode="dorfic"] .button,body[data-mode="dorfic"] .mode-trigger{border-radius:3px;border:2px outset #ffe0a9;background:linear-gradient(#fff7e8,#f4b65c);color:#542700}body[data-mode="dorfic"] button:active{border-style:inset}body[data-mode="dorfic"] .gradient-text{background:linear-gradient(90deg,#7d3300,#ed6e00,#ffae27);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="frutiger-aqua"]{--bg:#bceff6;--surface:#eaffff;--surface2:#c9f4f8;--text:#104b66;--muted:#39758c;--line:#46abc44d;--accent:#26b8d2;--accent2:#72e5ef;color-scheme:light;background:linear-gradient(#d8fbff66,#78d9ea66),url("assets/frutiger-aqua/banner.jpg") center/cover fixed!important}body[data-mode="frutiger-aqua"] .topbar{background:#eaffffe0}body[data-mode="frutiger-aqua"] .hero-art{background:url("assets/frutiger-aqua/banner.jpg") center/cover!important}body[data-mode="frutiger-aqua"] .hero-art>*{display:none}body[data-mode="frutiger-aqua"] .gradient-text{background:linear-gradient(90deg,#0b82b2,#25c4d5,#70e7ee);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="frutiger-aqua"].aqua-desert{--bg:#e8b96f;--surface:#fff1cf;--surface2:#f4d394;--text:#603c16;--muted:#88623b;--line:#b27b3947;--accent:#d98a2d;--accent2:#f3c56d;background:linear-gradient(#ffe6b25c,#d18b375e),url("assets/frutiger-desert/banner.png") center/cover fixed!important}body[data-mode="frutiger-aqua"].aqua-desert .topbar{background:#fff0cedd}body[data-mode="frutiger-aqua"].aqua-desert .hero-art{background-image:url("assets/frutiger-desert/banner.png")!important}body[data-mode="frutiger-aqua"].aqua-desert .gradient-text{background:linear-gradient(90deg,#a85c19,#d88b2c,#f0c16b);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="frutiger-eco"]{--bg:#c9efb5;--surface:#f3ffe9;--surface2:#d9f5c8;--text:#285a32;--muted:#56805d;--line:#62a66b4d;--accent:#55aa5e;--accent2:#a6e37b;color-scheme:light;background:linear-gradient(#efffe66b,#9fdb8b5c),url("assets/frutiger-eco/banner.jpg") center/cover fixed!important}body[data-mode="frutiger-eco"] .topbar{background:#f2ffe9df}body[data-mode="frutiger-eco"] .hero-art{background:url("assets/frutiger-eco/banner.jpg") center/cover!important}body[data-mode="frutiger-eco"] .hero-art>*{display:none}body[data-mode="frutiger-eco"] .gradient-text{background:linear-gradient(90deg,#317f43,#63b85f,#a5d86e);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="frutiger-glacier"]{--bg:#dbe9ed;--surface:#f7fcfd;--surface2:#e2eff2;--text:#385763;--muted:#6d8790;--line:#7d9fa94a;--accent:#79aebb;--accent2:#c9eef4;color-scheme:light;background:linear-gradient(#f4fbfc6b,#b7d6dc61),url("assets/frutiger-glacier/banner.png") center/cover fixed!important}body[data-mode="frutiger-glacier"] .topbar{background:#f4fbfce3}body[data-mode="frutiger-glacier"] .hero-art{background:url("assets/frutiger-glacier/banner.png") center/cover!important}body[data-mode="frutiger-glacier"] .hero-art>*{display:none}body[data-mode="frutiger-glacier"] .gradient-text{background:linear-gradient(90deg,#668d99,#9cc7d1,#d8f1f4);background-clip:text;-webkit-background-clip:text;color:transparent}
+@media(max-width:760px){.mode-label{display:none}.mode-trigger{min-width:0;max-width:170px}.mode-panel{position:fixed;left:10px;right:10px;top:auto;bottom:12px;width:auto;max-height:72vh;overflow:auto;border-radius:22px}.mode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mode-grid button{min-height:48px}.top-actions{position:relative}}
+
+/* 0.5.1 — mobile theme picker + legacy purple orb fix */
+body[data-mode="dorfic"] .hero-art::before,
+body[data-mode="frutiger-aqua"] .hero-art::before,
+body[data-mode="frutiger-eco"] .hero-art::before,
+body[data-mode="frutiger-glacier"] .hero-art::before{
+  display:none!important;
+  content:none!important;
+}
+
+@media(max-width:760px){
+  /* backdrop-filter on a sticky ancestor makes position:fixed use that ancestor
+     as its containing block on mobile Chromium. Disable it so the picker is
+     anchored to the actual viewport. */
+  .topbar{
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+  }
+  .mode-panel{
+    position:fixed!important;
+    z-index:9999!important;
+    left:10px!important;
+    right:10px!important;
+    top:auto!important;
+    bottom:calc(10px + env(safe-area-inset-bottom))!important;
+    width:auto!important;
+    max-height:min(72vh,620px)!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+
+/* AeroNata 1.0 */
+.quiz-section{position:relative}.quiz-shell{border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 92%,transparent),color-mix(in srgb,var(--surface2) 84%,transparent));padding:clamp(18px,4vw,42px);box-shadow:0 26px 80px #0003;overflow:hidden;position:relative}.quiz-shell:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-150px;top:-170px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 28%,transparent),transparent 68%);pointer-events:none}.quiz-intro{text-align:center;max-width:680px;margin:auto;padding:28px 0}.quiz-intro .quiz-mark{display:block;font-size:40px;color:var(--accent);filter:drop-shadow(0 0 18px var(--accent));margin-bottom:12px}.quiz-intro p{color:var(--muted);line-height:1.8;margin:0 auto 24px}.quiz-app:not(:empty)+*{display:none}.quiz-app:not(:empty){max-width:880px;margin:auto}.quiz-shell:has(.quiz-app:not(:empty)) .quiz-intro{display:none}.quiz-progress{display:flex;align-items:center;gap:14px;font:500 10px 'DM Mono',monospace;color:var(--muted);margin-bottom:24px}.quiz-progress i{height:4px;flex:1;background:var(--surface2);border-radius:999px;overflow:hidden}.quiz-progress b{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:inherit;transition:width .3s ease}.quiz-app h3{font-size:clamp(22px,4vw,38px);line-height:1.15;max-width:760px;margin:10px 0 28px}.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}.quiz-options button{border:1px solid var(--line);border-radius:16px;background:var(--surface2);color:var(--text);padding:18px;text-align:left;font:600 14px Manrope,sans-serif;min-height:72px;transition:.18s ease;overflow:hidden}.quiz-options button:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 30px #0002,inset 0 0 0 1px color-mix(in srgb,var(--accent) 35%,transparent)}.quiz-options.visual button{padding:0;display:flex;flex-direction:column}.quiz-options.visual img{width:100%;height:180px;object-fit:cover;display:block}.quiz-options.visual span{padding:14px 16px}.quiz-result-hero{min-height:330px;border-radius:20px;background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;color:white;box-shadow:inset 0 -100px 100px #0007}.quiz-result-hero p{font:500 10px 'DM Mono',monospace;letter-spacing:.18em;margin:0 0 8px}.quiz-result-hero h3{font-size:clamp(34px,7vw,68px);margin:0}.quiz-result-hero strong{font:600 11px 'DM Mono',monospace;letter-spacing:.1em;margin-top:8px}.quiz-result-copy{font-size:16px;line-height:1.7;color:var(--muted);max-width:720px;margin:22px 0}.quiz-runners{border-top:1px solid var(--line);padding-top:18px}.quiz-runners>div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.quiz-runners b{color:var(--accent)}.quiz-result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+body[data-mode="frutiger-zen"]{--bg:#dce8d4;--surface:#f6f5e9;--surface2:#e5ead9;--text:#31473a;--muted:#687b6d;--line:#78917b55;--accent:#719c79;--accent2:#d6bd7c;color-scheme:light;background:linear-gradient(#edf4e7aa,#c8d8c4aa),url("assets/frutiger-zen/banner.jpg") center/cover fixed!important}body[data-mode="frutiger-zen"] .topbar{background:#f3f4e9e8}body[data-mode="frutiger-zen"] .hero-art{background:url("assets/frutiger-zen/banner.jpg") center/cover!important}body[data-mode="frutiger-zen"] .hero-art>*,body[data-mode="frutiger-zen"] .hero-art:before{display:none!important;content:none!important}body[data-mode="frutiger-zen"] .gradient-text{background:linear-gradient(90deg,#4e765a,#86a878,#c6aa65);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="hawaii-2000s"]{--bg:#b9e8e7;--surface:#fff8df;--surface2:#e7f2d2;--text:#194e56;--muted:#52777a;--line:#268b9450;--accent:#1baeba;--accent2:#ff7d67;color-scheme:light;background:linear-gradient(#aee8e36b,#ffd99c5e),url("assets/hawaii-2000s/banner.png") center/cover fixed!important}body[data-mode="hawaii-2000s"] .topbar{background:#f9f5dce8}body[data-mode="hawaii-2000s"] .hero-art{background:url("assets/hawaii-2000s/banner.png") center/cover!important}body[data-mode="hawaii-2000s"] .hero-art>*,body[data-mode="hawaii-2000s"] .hero-art:before{display:none!important;content:none!important}body[data-mode="hawaii-2000s"] .gradient-text{background:linear-gradient(90deg,#149daa,#ff8b68,#f0c84d);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="brazil-2000s"]{--bg:#e7d8a6;--surface:#fff5d8;--surface2:#e6e0b5;--text:#334b3a;--muted:#6b745f;--line:#667d554c;--accent:#4d9b63;--accent2:#d6a938;color-scheme:light;background:linear-gradient(#f5e3ae80,#7cad7a55),url("assets/brazil-2000s/banner.jpg") center/cover fixed!important}body[data-mode="brazil-2000s"] .topbar{background:#fff1cee8}body[data-mode="brazil-2000s"] .hero-art{background:url("assets/brazil-2000s/banner.jpg") center/cover!important}body[data-mode="brazil-2000s"] .hero-art>*,body[data-mode="brazil-2000s"] .hero-art:before{display:none!important;content:none!important}body[data-mode="brazil-2000s"] .gradient-text{background:linear-gradient(90deg,#2f8754,#d5a52f,#4f78ad);background-clip:text;-webkit-background-clip:text;color:transparent}
+body[data-mode="brazil-2000s"].brazil-night{--bg:#11192a;--surface:#172034;--surface2:#202b42;--text:#eef3ff;--muted:#9daac0;--line:#70809a3f;--accent:#e89a45;--accent2:#6d86bd;color-scheme:dark;background:linear-gradient(#0a1020a8,#251a20a0),url("assets/brazil-night-2000s/banner.png") center/cover fixed!important}body[data-mode="brazil-2000s"].brazil-night .topbar{background:#11192ae8}body[data-mode="brazil-2000s"].brazil-night .hero-art{background:url("assets/brazil-night-2000s/banner.png") center/cover!important}body[data-mode="brazil-2000s"].brazil-night .gradient-text{background:linear-gradient(90deg,#f2a453,#8aa1d4,#d8b17d);background-clip:text;-webkit-background-clip:text;color:transparent}
+@media(max-width:760px){.mode-trigger{max-width:145px!important;padding:7px 9px!important;font-size:10px!important;border-radius:10px!important;gap:6px!important}.mode-spark{font-size:10px}.mode-panel{top:82px!important;bottom:auto!important;max-height:calc(100dvh - 96px)!important}.mode-grid button{min-height:44px!important;padding:9px!important}.quiz-shell{padding:18px 12px;border-radius:20px}.quiz-options{grid-template-columns:1fr}.quiz-options.visual{grid-template-columns:1fr 1fr;gap:8px}.quiz-options.visual img{height:128px}.quiz-options.visual span{padding:10px;font-size:11px}.quiz-app h3{font-size:24px}.quiz-result-hero{min-height:260px;padding:20px}.quiz-result-actions .button{flex:1;text-align:center;justify-content:center}}
+
+/* AeroNata 1.0 final — destaque do Quiz */
+.quiz-nav-link{display:inline-flex;align-items:center;gap:5px;color:var(--text)!important;font-weight:700}
+.quiz-nav-arrow{display:inline-block;color:var(--accent);font-size:15px;line-height:1;animation:quizNavArrow 1.15s ease-in-out infinite;filter:drop-shadow(0 0 7px color-mix(in srgb,var(--accent) 60%,transparent))}
+@keyframes quizNavArrow{50%{transform:translateY(4px)}}
+
+/* AeroNata ID — Supabase Auth */
+.aeronata-id-button{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:inherit;border-radius:999px;padding:.68rem .95rem;font:600 .78rem Manrope,sans-serif;letter-spacing:.02em;cursor:pointer;white-space:nowrap;backdrop-filter:blur(12px)}
+.aeronata-id-button:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
+.auth-dialog{width:min(92vw,440px);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:0;background:#0e0b15;color:#fff;box-shadow:0 30px 90px rgba(0,0,0,.55)}
+.auth-dialog::backdrop{background:rgba(3,2,7,.72);backdrop-filter:blur(8px)}
+.auth-card{padding:28px;position:relative;background:radial-gradient(circle at 80% 0%,rgba(139,82,255,.2),transparent 38%),#0e0b15}
+.auth-close{position:absolute;right:16px;top:14px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;font-size:1.35rem;cursor:pointer}
+.auth-brand{font:800 1.35rem Manrope,sans-serif;margin:0 0 4px}.auth-brand span{color:#a878ff}.auth-subtitle{margin:0 0 22px;color:#aaa1b8;font-size:.9rem}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;background:rgba(255,255,255,.055);border-radius:14px;margin-bottom:18px}.auth-tab{border:0;border-radius:10px;padding:10px;background:transparent;color:#aaa1b8;font-weight:700;cursor:pointer}.auth-tab.active{background:rgba(157,104,255,.2);color:#fff}
+.auth-form{display:grid;gap:12px}.auth-field{display:grid;gap:6px}.auth-field span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#aaa1b8}.auth-field input{width:100%;box-sizing:border-box;border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:13px 14px;background:rgba(255,255,255,.055);color:#fff;outline:none;font:500 .92rem Manrope,sans-serif}.auth-field input:focus{border-color:#9d68ff;box-shadow:0 0 0 3px rgba(157,104,255,.12)}
+.auth-submit{margin-top:5px;border:0;border-radius:12px;padding:13px 16px;background:linear-gradient(135deg,#8b52ff,#b578ff);color:#fff;font-weight:800;cursor:pointer}.auth-submit:disabled{opacity:.55;cursor:wait}.auth-message{min-height:20px;margin:2px 0 0;font-size:.82rem;color:#bcb3c9}.auth-message.error{color:#ff8f9c}.auth-message.success{color:#8ee6ba}
+.auth-user{display:none;text-align:center;padding:10px 0 2px}.auth-user.visible{display:block}.auth-user-avatar{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;background:linear-gradient(135deg,#8b52ff,#d58cff);font-weight:900;font-size:1.25rem}.auth-user b{display:block;font-size:1.05rem}.auth-user small{display:block;color:#aaa1b8;margin:4px 0 18px}.auth-signout{width:100%;border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px;background:rgba(255,255,255,.06);color:#fff;font-weight:700;cursor:pointer}
+@media(max-width:760px){.aeronata-id-button{padding:.58rem .72rem;font-size:.72rem}.auth-card{padding:24px 20px}.auth-dialog{border-radius:20px}.top-actions{gap:6px}}
