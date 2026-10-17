@@ -9,191 +9,60 @@
   <meta property="og:site_name" content="AeroNata">
   <meta property="og:title" content="AeroNata — explore estéticas">
   <meta property="og:description" content="Explore Frutiger Aero, Y2K, Vaporwave, Dark Aero e outros universos visuais.">
-  <meta property="og:url" content="https://aeronata.netlify.app/">
-  <meta property="og:image" content="https://aeronata.netlify.app/assets/site/aeronata-preview.jpg">
+  <meta property="og:url" content="https://aeronata.github.io/AeroNata/">
+  <meta property="og:image" content="https://aeronata.github.io/AeroNata/assets/site/aeronata-preview.jpg">
   <meta property="og:image:alt" content="Prévia visual do AeroNata">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AeroNata — explore estéticas">
   <meta name="twitter:description" content="Um arquivo de estéticas, nostalgia digital e futuros imaginados.">
-  <meta name="twitter:image" content="https://aeronata.netlify.app/assets/site/aeronata-preview.jpg">
+  <meta name="twitter:image" content="https://aeronata.github.io/AeroNata/assets/site/aeronata-preview.jpg">
   <title>AeroNata — explore estéticas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=M+PLUS+1p:wght@400;500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="intro.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js" defer></script>
+  <script src="intro.js" defer></script>
 </head>
 <body data-mode="neon">
+  <div id="an-intro" role="presentation" aria-label="Introdução visual do AeroNata">
+    <div class="an-intro-space">
+      <div class="an-intro-ring"></div><div class="an-intro-ring r2"></div>
+      <div class="an-intro-items" aria-hidden="true">
+        <div class="an-intro-chip">FRUTIGER<br>AERO</div><div class="an-intro-chip">Y2K</div><div class="an-intro-chip">VAPORWAVE</div><div class="an-intro-chip">EVIL<br>AERO</div><div class="an-intro-chip">2000s<br>TECH</div><div class="an-intro-chip">DORFIC</div><div class="an-intro-chip">BRAZIL<br>2000s</div><div class="an-intro-chip">FRUTIGER<br>ZEN</div>
+      </div>
+      <div class="an-intro-core" aria-hidden="true"></div>
+      <div class="an-intro-name">Aero<span>Nata</span></div><div class="an-intro-sub">VISUAL ARCHIVE · 1.0</div>
+    </div>
+  </div>
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
 
   <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="AeroNata, início">
-      <img class="brand-logo" src="assets/site/aeronata-logo.png" alt=""><span>Aero<span>Nata</span></span>
-    </a>
-    <nav class="main-nav" aria-label="Navegação principal">
-      <a href="#catalogo">Catálogo</a>
-      <a href="#quiz" class="quiz-nav-link">Quiz <span class="quiz-nav-arrow" aria-hidden="true">↓</span></a>
-      <a href="#experiencias">Experiências</a>
-      <a href="#sobre">Sobre</a>
-    </nav>
+    <a class="brand" href="#inicio" aria-label="AeroNata, início"><img class="brand-logo" src="assets/site/aeronata-logo.png" alt=""><span>Aero<span>Nata</span></span></a>
+    <nav class="main-nav" aria-label="Navegação principal"><a href="#catalogo">Catálogo</a><a href="#quiz" class="quiz-nav-link">Quiz <span class="quiz-nav-arrow" aria-hidden="true">↓</span></a><a href="#experiencias">Experiências</a><a href="#sobre">Sobre</a></nav>
     <div class="top-actions">
-      <div class="mode-picker">
-        <span class="mode-label">Interface</span>
-        <button class="mode-trigger" id="modeTrigger" type="button" aria-haspopup="true" aria-expanded="false"><span class="mode-spark">✦</span><span id="modeCurrent">Neon futurista</span><span class="mode-chevron">⌄</span></button>
-        <div class="mode-panel" id="modePanel" role="menu" aria-label="Escolher interface">
-          <div class="mode-panel-head"><b>INTERFACES AERONATA</b><small>Escolha a atmosfera do arquivo</small></div>
-          <div class="mode-grid">
-            <button data-mode-choice="neon"><i></i><span>Neon futurista</span></button>
-            <button data-mode-choice="aero"><i></i><span>Frutiger Aero</span></button>
-            <button data-mode-choice="dark-aero"><i></i><span>Dark Aero</span></button>
-            <button data-mode-choice="frutiger-metro"><i></i><span>Frutiger Metro</span></button>
-            <button data-mode-choice="vaporwave"><i></i><span>Vaporwave</span></button>
-            <button data-mode-choice="evil-aero"><i></i><span>Evil Aero</span></button>
-            <button data-mode-choice="2000s-tech"><i></i><span>2000s Tech</span></button>
-            <button data-mode-choice="dorfic" ><i></i><span>Dorfic</span></button>
-            <button data-mode-choice="frutiger-aqua" ><i></i><span>Frutiger Aqua</span></button>
-            <button data-mode-choice="frutiger-eco" ><i></i><span>Frutiger Eco</span></button>
-            <button data-mode-choice="frutiger-glacier" ><i></i><span>Frutiger Glacier</span></button>
-
-            <button data-mode-choice="frutiger-zen" class="is-new"><i></i><span>Frutiger Zen <em>NEW</em></span></button>
-            <button data-mode-choice="hawaii-2000s" class="is-new"><i></i><span>Hawaii 2000s <em>NEW</em></span></button>
-            <button data-mode-choice="brazil-2000s" class="is-new"><i></i><span>Brazil 2000s <em>NEW</em></span></button>
-            <button data-mode-choice="classic"><i></i><span>Convencional</span></button>
-            <button data-mode-choice="retro"><i></i><span>Internet retrô</span></button>
-          </div>
-        </div>
-        <select id="modeSelect" aria-label="Escolher modo visual" class="native-mode-select" tabindex="-1">
-          <option value="neon">Neon futurista</option><option value="aero">Frutiger Aero</option><option value="dark-aero">Dark Aero</option><option value="frutiger-metro">Frutiger Metro</option><option value="vaporwave">Vaporwave</option><option value="evil-aero">Evil Aero</option><option value="2000s-tech">2000s Tech</option><option value="dorfic">Dorfic</option><option value="frutiger-aqua">Frutiger Aqua</option><option value="frutiger-eco">Frutiger Eco</option><option value="frutiger-glacier">Frutiger Glacier</option><option value="frutiger-zen">Frutiger Zen</option><option value="hawaii-2000s">Hawaii 2000s</option><option value="brazil-2000s">Brazil 2000s Nostalgia</option><option value="classic">Convencional</option><option value="retro">Internet retrô</option>
-        </select>
+      <div class="mode-picker"><span class="mode-label">Interface</span><button class="mode-trigger" id="modeTrigger" type="button" aria-haspopup="true" aria-expanded="false"><span class="mode-spark">✦</span><span id="modeCurrent">Neon futurista</span><span class="mode-chevron">⌄</span></button><div class="mode-panel" id="modePanel" role="menu" aria-label="Escolher interface"><div class="mode-panel-head"><b>INTERFACES AERONATA</b><small>Escolha a atmosfera do arquivo</small></div><div class="mode-grid"><button data-mode-choice="neon"><i></i><span>Neon futurista</span></button><button data-mode-choice="aero"><i></i><span>Frutiger Aero</span></button><button data-mode-choice="dark-aero"><i></i><span>Dark Aero</span></button><button data-mode-choice="frutiger-metro"><i></i><span>Frutiger Metro</span></button><button data-mode-choice="vaporwave"><i></i><span>Vaporwave</span></button><button data-mode-choice="evil-aero"><i></i><span>Evil Aero</span></button><button data-mode-choice="2000s-tech"><i></i><span>2000s Tech</span></button><button data-mode-choice="dorfic"><i></i><span>Dorfic</span></button><button data-mode-choice="frutiger-aqua"><i></i><span>Frutiger Aqua</span></button><button data-mode-choice="frutiger-eco"><i></i><span>Frutiger Eco</span></button><button data-mode-choice="frutiger-glacier"><i></i><span>Frutiger Glacier</span></button><button data-mode-choice="frutiger-zen" class="is-new"><i></i><span>Frutiger Zen <em>NEW</em></span></button><button data-mode-choice="hawaii-2000s" class="is-new"><i></i><span>Hawaii 2000s <em>NEW</em></span></button><button data-mode-choice="brazil-2000s" class="is-new"><i></i><span>Brazil 2000s <em>NEW</em></span></button><button data-mode-choice="classic"><i></i><span>Convencional</span></button><button data-mode-choice="retro"><i></i><span>Internet retrô</span></button></div></div>
+        <select id="modeSelect" aria-label="Escolher modo visual" class="native-mode-select" tabindex="-1"><option value="neon">Neon futurista</option><option value="aero">Frutiger Aero</option><option value="dark-aero">Dark Aero</option><option value="frutiger-metro">Frutiger Metro</option><option value="vaporwave">Vaporwave</option><option value="evil-aero">Evil Aero</option><option value="2000s-tech">2000s Tech</option><option value="dorfic">Dorfic</option><option value="frutiger-aqua">Frutiger Aqua</option><option value="frutiger-eco">Frutiger Eco</option><option value="frutiger-glacier">Frutiger Glacier</option><option value="frutiger-zen">Frutiger Zen</option><option value="hawaii-2000s">Hawaii 2000s</option><option value="brazil-2000s">Brazil 2000s Nostalgia</option><option value="classic">Convencional</option><option value="retro">Internet retrô</option></select>
       </div>
-      <button class="aeronata-id-button" id="authOpen" type="button" aria-label="Abrir AeroNata ID">AeroNata ID</button>
-      <button class="icon-button" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">◐</button>
-      <div class="onboarding-hint theme-hint" id="themeHint" role="status"><span>Troque a estética ✦</span><i aria-hidden="true">↑</i></div>
-      <div class="onboarding-hint night-hint" id="nightHint" role="status"><span>Experimente o modo noturno 🌙</span><i aria-hidden="true">↑</i></div>
-      <div class="onboarding-hint metro-hint" id="metroHint" role="status" hidden><span>☀️/🌙 muda o visual + música ♪</span><i aria-hidden="true">↑</i></div>
+      <button class="aeronata-id-button" id="authOpen" type="button" aria-label="Abrir AeroNata ID">AeroNata ID</button><button class="icon-button" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">◐</button><div class="onboarding-hint theme-hint" id="themeHint" role="status"><span>Troque a estética ✦</span><i aria-hidden="true">↑</i></div><div class="onboarding-hint night-hint" id="nightHint" role="status"><span>Experimente o modo noturno 🌙</span><i aria-hidden="true">↑</i></div><div class="onboarding-hint metro-hint" id="metroHint" role="status" hidden><span>☀️/🌙 muda o visual + música ♪</span><i aria-hidden="true">↑</i></div>
     </div>
   </header>
 
   <main id="inicio">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="pulse"></span>ARQUIVO VISUAL INDEPENDENTE · VERSÃO 1.0</p>
-        <h1>Explore o que<br>os olhos <span class="gradient-text">sentem.</span></h1>
-        <p class="hero-description">Um arquivo de estéticas, subculturas e mundos visuais. Do futuro brilhante dos anos 2000 aos cantos estranhos da internet — encontre a linguagem que combina com você.</p>
-        <div class="hero-buttons">
-          <a class="button primary" href="#catalogo">Explorar catálogo <span>↗</span></a>
-          <a class="button secondary" href="#experiencias">Entrar nos portais <span>→</span></a>
-        </div>
-        <div class="hero-meta">
-          <span><strong id="countNumber">21</strong> ESTÉTICAS</span><span class="meta-dot"></span>
-          <span>16 MODOS VISUAIS</span><span class="meta-dot"></span>
-          <span>FEITO PARA EXPLORAR</span>
-        </div>
-      </div>
-      <div class="hero-art" aria-label="Composição abstrata neon em roxo" role="img">
-        <div class="orbit"></div><div class="orbit orbit-b"></div>
-        <div class="orb orb-main"></div><div class="orb orb-small"></div>
-        <div class="glass-card card-a"><span>VISUAL ARCHIVE</span><b>∞</b><small>IMAGINE OUTSIDE</small></div>
-        <div class="glass-card card-b"><span>ESTÉTICA DO DIA</span><b>Y2K<span class="tiny-spark">✦</span></b><small>1997 — 2004</small></div>
-        <span class="art-cross">✳</span>
-      </div>
-    </section>
-
+    <section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="pulse"></span>ARQUIVO VISUAL INDEPENDENTE · VERSÃO 1.0</p><h1>Explore o que<br>os olhos <span class="gradient-text">sentem.</span></h1><p class="hero-description">Um arquivo de estéticas, subculturas e mundos visuais. Do futuro brilhante dos anos 2000 aos cantos estranhos da internet — encontre a linguagem que combina com você.</p><div class="hero-buttons"><a class="button primary" href="#catalogo">Explorar catálogo <span>↗</span></a><a class="button secondary" href="#experiencias">Entrar nos portais <span>→</span></a></div><div class="hero-meta"><span><strong id="countNumber">21</strong> ESTÉTICAS</span><span class="meta-dot"></span><span>16 MODOS VISUAIS</span><span class="meta-dot"></span><span>FEITO PARA EXPLORAR</span></div></div><div class="hero-art" aria-label="Composição abstrata neon em roxo" role="img"><div class="orbit"></div><div class="orbit orbit-b"></div><div class="orb orb-main"></div><div class="orb orb-small"></div><div class="glass-card card-a"><span>VISUAL ARCHIVE</span><b>∞</b><small>IMAGINE OUTSIDE</small></div><div class="glass-card card-b"><span>ESTÉTICA DO DIA</span><b>Y2K<span class="tiny-spark">✦</span></b><small>1997 — 2004</small></div><span class="art-cross">✳</span></div></section>
     <div class="ticker" aria-hidden="true"><div><span>✳</span> CULTURA VISUAL <span>✳</span> INTERNET NOSTALGIA <span>✳</span> DIGITAL WORLDS <span>✳</span> FUTUROS IMAGINADOS <span>✳</span> CULTURA VISUAL <span>✳</span></div></div>
-
-    <section class="section" id="catalogo">
-      <div class="section-heading">
-        <div><p class="eyebrow">01 / O ARQUIVO</p><h2>Encontre sua <span class="heading-period">estética.</span></h2><p class="section-intro">Uma coleção em constante expansão de universos visuais.</p></div>
-        <span class="section-index">AERONATA ARCHIVE — 001/021</span>
-      </div>
-      <div class="catalog-tools">
-        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Buscar estética, conceito ou palavra..." autocomplete="off" aria-label="Buscar no catálogo"></label>
-        <div class="filter-row" id="filters" aria-label="Filtrar estéticas">
-          <button class="filter active" data-filter="Todas" type="button">Todas</button>
-          <button class="filter" data-filter="Digital" type="button">Digital</button>
-          <button class="filter" data-filter="Nostalgia" type="button">Nostalgia</button>
-          <button class="filter" data-filter="Natureza" type="button">Natureza</button>
-          <button class="filter" data-filter="Sombria" type="button">Sombria</button>
-        </div>
-      </div>
-      <div class="aesthetic-grid" id="aestheticGrid" aria-live="polite"></div>
-      <p class="empty-state" id="emptyState" hidden>Nenhuma estética encontrada. Tente outra busca ou categoria.</p>
-      <div class="catalog-footer"><span id="resultsLabel">Mostrando 8 de 21 estéticas</span><button class="text-button" id="showAll" type="button">Ver todas as estéticas <span>→</span></button></div>
-    </section>
-
-
-    <section class="section quiz-section" id="quiz">
-      <div class="section-heading"><div><p class="eyebrow">02 / QUIZ AERONATA</p><h2>Qual estética <span class="heading-period">é você?</span></h2><p class="section-intro">15 escolhas, algumas memórias e nenhum resultado óbvio. Descubra qual universo visual mais combina com você.</p></div><span class="section-index">AERONATA TEST — 015</span></div>
-      <div class="quiz-shell"><div class="quiz-intro"><span class="quiz-mark">✦</span><p>Não existem respostas certas. O AeroNata cruza suas escolhas entre várias estéticas — inclusive variantes da família Frutiger.</p><button class="button primary" id="quizStart" type="button">Começar o quiz <span>↗</span></button></div><div id="quizApp" class="quiz-app" aria-live="polite"></div></div>
-    </section>
-
-    <section class="section experiences-section" id="experiencias">
-      <div class="section-heading">
-        <div><p class="eyebrow">03 / PORTAIS ESPECIAIS</p><h2>Não é só um <span class="heading-period">catálogo.</span></h2><p class="section-intro">Duas experiências para atravessar o visual e chegar às ideias por trás dele.</p></div>
-      </div>
-      <div class="experience-grid">
-        <article class="experience-card">
-          <div class="exp-visual water-visual" aria-hidden="true"><div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="water-wave"></div><div class="bubble bubble-one"></div><div class="bubble bubble-two"></div><span class="visual-label">A BETTER TOMORROW?</span></div>
-          <div class="exp-body"><p class="eyebrow">PORTAL 01 · NATUREZA + TECNOLOGIA</p><h3>O mundo que nos prometeram</h3><p>Uma viagem pelo Frutiger Aero e pela promessa de um futuro limpo, otimista e conectado à natureza — com ideias práticas para cuidar do mundo real.</p><a class="button primary" href="#experience-aero">Entrar no portal <span>↗</span></a></div>
-        </article>
-        <article class="experience-card">
-          <div class="exp-visual retro-visual" aria-hidden="true"><div class="retro-window"><div class="retro-title">★ WELCOME TO MY HOMEPAGE ★</div><div class="retro-stars">✦ ✧ ✦</div><div class="retro-gif">UNDER<br>CONSTRUCTION</div><div class="retro-links">HOME · GUESTBOOK · LINKS</div></div><span class="retro-stamp">BEST VIEWED IN 2003</span></div>
-          <div class="exp-body"><p class="eyebrow">PORTAL 02 · MEMÓRIA DA WEB</p><h3>Um passeio pela antiga internet</h3><p>GIFs, páginas pessoais, fóruns, pixels e descobertas sem fim. Relembre uma web cheia de pequenos mundos feitos por pessoas.</p><a class="button primary" href="#experience-retro">Viajar no tempo <span>↗</span></a></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section about-section" id="sobre">
-      <div class="about-mark" aria-hidden="true">✳</div>
-      <div class="about-copy"><p class="eyebrow">04 / SOBRE O PROJETO</p><h2>Um lugar para a internet <span class="heading-period">sentir de novo.</span></h2><p>O AeroNata é um arquivo independente para descobrir estéticas visuais, entender de onde vieram e explorar como elas continuam influenciando a cultura digital. É um projeto em evolução: as descrições são introduções, não uma enciclopédia definitiva.</p><div class="about-points"><div><b>01 / EXPLORAR</b><span>Descubra universos</span><small>Busque, filtre e abra cada estética.</small></div><div><b>02 / ENTENDER</b><span>Conheça o contexto</span><small>Origens, características e influências.</small></div><div><b>03 / IMAGINAR</b><span>Crie novas conexões</span><small>Uma estética pode contar muitas histórias.</small></div></div></div>
-    </section>
+    <section class="section" id="catalogo"><div class="section-heading"><div><p class="eyebrow">01 / O ARQUIVO</p><h2>Encontre sua <span class="heading-period">estética.</span></h2><p class="section-intro">Uma coleção em constante expansão de universos visuais.</p></div><span class="section-index">AERONATA ARCHIVE — 001/021</span></div><div class="catalog-tools"><label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Buscar estética, conceito ou palavra..." autocomplete="off" aria-label="Buscar no catálogo"></label><div class="filter-row" id="filters" aria-label="Filtrar estéticas"><button class="filter active" data-filter="Todas" type="button">Todas</button><button class="filter" data-filter="Digital" type="button">Digital</button><button class="filter" data-filter="Nostalgia" type="button">Nostalgia</button><button class="filter" data-filter="Natureza" type="button">Natureza</button><button class="filter" data-filter="Sombria" type="button">Sombria</button></div></div><div class="aesthetic-grid" id="aestheticGrid" aria-live="polite"></div><p class="empty-state" id="emptyState" hidden>Nenhuma estética encontrada. Tente outra busca ou categoria.</p><div class="catalog-footer"><span id="resultsLabel">Mostrando 8 de 21 estéticas</span><button class="text-button" id="showAll" type="button">Ver todas as estéticas <span>→</span></button></div></section>
+    <section class="section quiz-section" id="quiz"><div class="section-heading"><div><p class="eyebrow">02 / QUIZ AERONATA</p><h2>Qual estética <span class="heading-period">é você?</span></h2><p class="section-intro">15 escolhas, algumas memórias e nenhum resultado óbvio. Descubra qual universo visual mais combina com você.</p></div><span class="section-index">AERONATA TEST — 015</span></div><div class="quiz-shell"><div class="quiz-intro"><span class="quiz-mark">✦</span><p>Não existem respostas certas. O AeroNata cruza suas escolhas entre várias estéticas — inclusive variantes da família Frutiger.</p><button class="button primary" id="quizStart" type="button">Começar o quiz <span>↗</span></button></div><div id="quizApp" class="quiz-app" aria-live="polite"></div></div></section>
+    <section class="section experiences-section" id="experiencias"><div class="section-heading"><div><p class="eyebrow">03 / PORTAIS ESPECIAIS</p><h2>Não é só um <span class="heading-period">catálogo.</span></h2><p class="section-intro">Duas experiências para atravessar o visual e chegar às ideias por trás dele.</p></div></div><div class="experience-grid"><article class="experience-card"><div class="exp-visual water-visual" aria-hidden="true"><div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="water-wave"></div><div class="bubble bubble-one"></div><div class="bubble bubble-two"></div><span class="visual-label">A BETTER TOMORROW?</span></div><div class="exp-body"><p class="eyebrow">PORTAL 01 · NATUREZA + TECNOLOGIA</p><h3>O mundo que nos prometeram</h3><p>Uma viagem pelo Frutiger Aero e pela promessa de um futuro limpo, otimista e conectado à natureza — com ideias práticas para cuidar do mundo real.</p><a class="button primary" href="#experience-aero">Entrar no portal <span>↗</span></a></div></article><article class="experience-card"><div class="exp-visual retro-visual" aria-hidden="true"><div class="retro-window"><div class="retro-title">★ WELCOME TO MY HOMEPAGE ★</div><div class="retro-stars">✦ ✧ ✦</div><div class="retro-gif">UNDER<br>CONSTRUCTION</div><div class="retro-links">HOME · GUESTBOOK · LINKS</div></div><span class="retro-stamp">BEST VIEWED IN 2003</span></div><div class="exp-body"><p class="eyebrow">PORTAL 02 · MEMÓRIA DA WEB</p><h3>Um passeio pela antiga internet</h3><p>GIFs, páginas pessoais, fóruns, pixels e descobertas sem fim. Relembre uma web cheia de pequenos mundos feitos por pessoas.</p><a class="button primary" href="#experience-retro">Viajar no tempo <span>↗</span></a></div></article></div></section>
+    <section class="section about-section" id="sobre"><div class="about-mark" aria-hidden="true">✳</div><div class="about-copy"><p class="eyebrow">04 / SOBRE O PROJETO</p><h2>Um lugar para a internet <span class="heading-period">sentir de novo.</span></h2><p>O AeroNata é um arquivo independente para descobrir estéticas visuais, entender de onde vieram e explorar como elas continuam influenciando a cultura digital. É um projeto em evolução: as descrições são introduções, não uma enciclopédia definitiva.</p><div class="about-points"><div><b>01 / EXPLORAR</b><span>Descubra universos</span><small>Busque, filtre e abra cada estética.</small></div><div><b>02 / ENTENDER</b><span>Conheça o contexto</span><small>Origens, características e influências.</small></div><div><b>03 / IMAGINAR</b><span>Crie novas conexões</span><small>Uma estética pode contar muitas histórias.</small></div></div></div></section>
   </main>
-
   <footer class="footer"><a class="brand" href="#inicio"><img class="brand-logo" src="assets/site/aeronata-logo.png" alt=""><span>Aero<span>Nata</span></span></a><span>UM ARQUIVO VISUAL EM CONSTRUÇÃO · VERSÃO 1.0</span><a href="#inicio">Voltar ao topo ↑</a></footer>
-
-
-  <div class="music-player" id="musicPlayer" hidden>
-    <button id="musicToggle" type="button" aria-label="Tocar ou pausar música">▶</button>
-    <div><b id="musicTitle">Trilha do tema</b><small id="musicStatus">pausado</small></div>
-    <input id="musicVolume" type="range" min="0" max="1" value="0.45" step="0.05" aria-label="Volume">
-    <audio id="themeAudio" preload="metadata"></audio>
-  </div>
-
-  <dialog id="authDialog" class="auth-dialog" aria-labelledby="authTitle">
-    <div class="auth-card">
-      <button class="auth-close" id="authClose" type="button" aria-label="Fechar">×</button>
-      <h2 class="auth-brand" id="authTitle">Aero<span>Nata</span> ID</h2>
-      <p class="auth-subtitle">Sua identidade dentro do arquivo.</p>
-      <div id="authGuest">
-        <div class="auth-tabs" role="tablist">
-          <button class="auth-tab active" id="loginTab" type="button">Entrar</button>
-          <button class="auth-tab" id="signupTab" type="button">Criar conta</button>
-        </div>
-        <form class="auth-form" id="authForm">
-          <label class="auth-field" id="nameField" hidden><span>Nome</span><input id="authName" type="text" maxlength="32" autocomplete="nickname" placeholder="Como quer aparecer?"></label>
-          <label class="auth-field"><span>E-mail</span><input id="authEmail" type="email" required autocomplete="email" placeholder="voce@email.com"></label>
-          <label class="auth-field"><span>Senha</span><input id="authPassword" type="password" minlength="8" required autocomplete="current-password" placeholder="Mínimo de 8 caracteres"></label>
-          <button class="auth-submit" id="authSubmit" type="submit">Entrar</button>
-          <p class="auth-message" id="authMessage" role="status"></p>
-        </form>
-      </div>
-      <div class="auth-user" id="authUser">
-        <div class="auth-user-avatar" id="authAvatar">A</div>
-        <b id="authUserName">Conta AeroNata</b>
-        <small id="authUserEmail"></small>
-        <button class="auth-signout" id="authSignout" type="button">Sair da conta</button>
-      </div>
-    </div>
-  </dialog>
-  <dialog id="detailDialog" class="detail-dialog" aria-labelledby="detailTitle">
-    <button class="dialog-close" id="dialogClose" type="button" aria-label="Fechar detalhes">×</button>
-    <div id="detailContent"></div>
-  </dialog>
-  <dialog id="experienceDialog" class="detail-dialog experience-dialog" aria-labelledby="experienceTitle">
-    <button class="dialog-close" id="experienceClose" type="button" aria-label="Fechar portal">×</button>
-    <div id="experienceContent"></div>
-  </dialog>
+  <div class="music-player" id="musicPlayer" hidden><button id="musicToggle" type="button" aria-label="Tocar ou pausar música">▶</button><div><b id="musicTitle">Trilha do tema</b><small id="musicStatus">pausado</small></div><input id="musicVolume" type="range" min="0" max="1" value="0.45" step="0.05" aria-label="Volume"><audio id="themeAudio" preload="metadata"></audio></div>
+  <dialog id="authDialog" class="auth-dialog" aria-labelledby="authTitle"><div class="auth-card"><button class="auth-close" id="authClose" type="button" aria-label="Fechar">×</button><h2 class="auth-brand" id="authTitle">Aero<span>Nata</span> ID</h2><p class="auth-subtitle">Sua identidade dentro do arquivo.</p><div id="authGuest"><div class="auth-tabs" role="tablist"><button class="auth-tab active" id="loginTab" type="button">Entrar</button><button class="auth-tab" id="signupTab" type="button">Criar conta</button></div><form class="auth-form" id="authForm"><label class="auth-field" id="nameField" hidden><span>Nome</span><input id="authName" type="text" maxlength="32" autocomplete="nickname" placeholder="Como quer aparecer?"></label><label class="auth-field"><span>E-mail</span><input id="authEmail" type="email" required autocomplete="email" placeholder="voce@email.com"></label><label class="auth-field"><span>Senha</span><input id="authPassword" type="password" minlength="8" required autocomplete="current-password" placeholder="Mínimo de 8 caracteres"></label><button class="auth-submit" id="authSubmit" type="submit">Entrar</button><p class="auth-message" id="authMessage" role="status"></p></form></div><div class="auth-user" id="authUser"><div class="auth-user-avatar" id="authAvatar">A</div><b id="authUserName">Conta AeroNata</b><small id="authUserEmail"></small><button class="auth-signout" id="authSignout" type="button">Sair da conta</button></div></div></dialog>
+  <dialog id="detailDialog" class="detail-dialog" aria-labelledby="detailTitle"><button class="dialog-close" id="dialogClose" type="button" aria-label="Fechar detalhes">×</button><div id="detailContent"></div></dialog>
+  <dialog id="experienceDialog" class="detail-dialog experience-dialog" aria-labelledby="experienceTitle"><button class="dialog-close" id="experienceClose" type="button" aria-label="Fechar portal">×</button><div id="experienceContent"></div></dialog>
 </body>
 </html>
