@@ -11,19 +11,25 @@
   window.addEventListener('keydown', e => { if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') closeIntro(); }, { once: true });
 })();
 
-/* AeroNata 1.1 — Technozen: surgical extension, preserving the core archive. */
+/* AeroNata 1.0 — Technozen extension. */
 (() => {
   const technozen = {
-    id:'technozen', name:'Technozen', category:'Digital', tags:['Digital','Natureza','Nostalgia'], period:'2000s',
+    id:'technozen', name:'Technozen',
+    cover:'assets/technozen/technozen-capa-categoria.png',
+    banner:'assets/technozen/technozen-banner.png',
+    gallery:['assets/technozen/technozen-exemplo1.jpg','assets/technozen/technozen-exemplo2.jpg','assets/technozen/technozen-exemplo3.jpg','assets/technozen/technozen-exemplo4.jpg'],
+    theme:'assets/technozen/technozen-tema.mp3',
+    category:'Digital', tags:['Digital','Natureza','Nostalgia'], period:'2000s',
     colors:['#b9ff27','#45c95a'], bg:'linear-gradient(145deg,#d9ff61 0%,#83e735 42%,#18a85b 100%)',
     summary:'Tecnologia, natureza e tranquilidade em uma visão otimista e tátil do futuro digital dos anos 2000.',
     origin:'Technozen reúne uma linguagem visual dos anos 2000 em que eletrônicos, interfaces amigáveis e design tecnológico aparecem integrados à natureza e ao bem-estar. O nome combina tecnologia com a ideia de calma e equilíbrio do “zen”.',
     features:['Verde-limão, branco, azul e transparências','Botões glossy, vidro, gel, gotas e formas arredondadas','Celulares, players, computadores e interfaces como parte da natureza','Folhas, água, reflexos, brilho suave e sensação de calma'],
     culture:'A linguagem aparece ligada ao design tecnológico e comercial dos anos 2000, especialmente em eletrônicos, publicidade, interfaces e imagens que apresentavam a tecnologia pessoal como simples, limpa e acolhedora.',
     evolution:'Com a ascensão do flat design e de interfaces mais minimalistas, esse tipo de acabamento perdeu espaço. Hoje ele reaparece como nostalgia de uma época em que o futuro digital era imaginado de forma mais física, colorida e otimista.',
-    curiosity:'Technozen pode lembrar Frutiger Eco, mas o foco é diferente: Frutiger Eco imagina um futuro sustentável para o planeta; Technozen imagina uma relação harmoniosa entre pessoas, tecnologia e natureza.'
+    curiosity:'Frutiger Eco imagina um futuro melhor para o planeta. Technozen imagina uma relação melhor entre pessoas, tecnologia e natureza.'
   };
   if (typeof aesthetics !== 'undefined' && !aesthetics.some(a => a.id === 'technozen')) { aesthetics.splice(Math.min(7, aesthetics.length), 0, technozen); if (typeof renderCards === 'function') renderCards(); }
+  if (typeof themeTracks !== 'undefined' && !themeTracks.technozen) themeTracks.technozen={name:'Technozen',src:'assets/technozen/technozen-tema.mp3'};
   const select = document.getElementById('modeSelect'); const grid = document.querySelector('.mode-grid');
   if (select && !select.querySelector('option[value="technozen"]')) { const option=document.createElement('option'); option.value='technozen'; option.textContent='Technozen'; select.insertBefore(option,select.querySelector('option[value="classic"]')); }
   if (grid && !grid.querySelector('[data-mode-choice="technozen"]')) { const button=document.createElement('button'); button.type='button'; button.dataset.modeChoice='technozen'; button.className='is-new technozen-choice'; button.innerHTML='<i></i><span>Technozen <em>NEW</em></span>'; grid.insertBefore(button,grid.querySelector('[data-mode-choice="classic"]')); }
