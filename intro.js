@@ -15,12 +15,9 @@
 (() => {
   const technozen = {
     id:'technozen', name:'Technozen',
-    cover:'assets/technozen/technozen-capa-categoria.png',
-    banner:'assets/technozen/technozen-banner.png',
-    gallery:['assets/technozen/technozen-exemplo1.jpg','assets/technozen/technozen-exemplo2.jpg','assets/technozen/technozen-exemplo3.jpg','assets/technozen/technozen-exemplo4.jpg'],
-    theme:'assets/technozen/technozen-tema.mp3',
-    category:'Digital', tags:['Digital','Natureza','Nostalgia'], period:'2000s',
-    colors:['#b9ff27','#45c95a'], bg:'linear-gradient(145deg,#d9ff61 0%,#83e735 42%,#18a85b 100%)',
+    cover:'assets/technozen/technozen-capa-categoria.png', banner:'assets/technozen/technozen-banner.png',
+    gallery:['assets/technozen/technozen-exemplo1.jpg','assets/technozen/technozen-exemplo2.jpg','assets/technozen/technozen-exemplo3.jpg','assets/technozen/technozen-exemplo4.jpg'], theme:'assets/technozen/technozen-tema.mp3',
+    category:'Digital', tags:['Digital','Natureza','Nostalgia'], period:'2000s', colors:['#b9ff27','#45c95a'], bg:'linear-gradient(145deg,#d9ff61 0%,#83e735 42%,#18a85b 100%)',
     summary:'Tecnologia, natureza e tranquilidade em uma visão otimista e tátil do futuro digital dos anos 2000.',
     origin:'Technozen reúne uma linguagem visual dos anos 2000 em que eletrônicos, interfaces amigáveis e design tecnológico aparecem integrados à natureza e ao bem-estar. O nome combina tecnologia com a ideia de calma e equilíbrio do “zen”.',
     features:['Verde-limão, branco, azul e transparências','Botões glossy, vidro, gel, gotas e formas arredondadas','Celulares, players, computadores e interfaces como parte da natureza','Folhas, água, reflexos, brilho suave e sensação de calma'],
@@ -40,3 +37,6 @@
   grid?.addEventListener('click',e=>{if(e.target.closest('[data-mode-choice="technozen"]'))requestAnimationFrame(()=>document.body.classList.add('technozen-active'))});
   document.addEventListener('click',e=>{const card=e.target.closest('[data-id]');if(!card)return;const dialog=document.getElementById('detailDialog');if(card.dataset.id==='technozen')requestAnimationFrame(()=>dialog?.classList.add('technozen-detail'));else dialog?.classList.remove('technozen-detail')},true);
 })();
+
+/* AeroNata guide loader */
+(()=>{const css=document.createElement('link');css.rel='stylesheet';css.href='avatar.css';document.head.appendChild(css);const start=()=>{const js=document.createElement('script');js.src='avatar.js';document.body.appendChild(js)};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start()})();
