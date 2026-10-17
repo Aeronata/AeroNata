@@ -366,7 +366,7 @@ document.querySelector('#quizStart')?.addEventListener('click',startQuiz);docume
 
 /* ===== AeroNata ID / Supabase Auth ===== */
 (() => {
-  const SUPABASE_URL = 'https://vaqdiazlpzhngahgzcuo.supabase.co';
+  const SUPABASE_URL = 'https://vaqdiaqzlpzhngahgzcuo.supabase.co';
   const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_IemRQeg7UnyTpAgqBPiCnA_cMZgmRVJ';
   if (!window.supabase) return console.warn('AeroNata ID: biblioteca Supabase indisponível.');
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
