@@ -40,3 +40,6 @@
 
 /* AeroNata guide loader */
 (()=>{const css=document.createElement('link');css.rel='stylesheet';css.href='avatar.css';document.head.appendChild(css);const start=()=>{const js=document.createElement('script');js.src='avatar.js';document.body.appendChild(js)};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start()})();
+
+/* Expanded quiz bank loader — keeps the main script lean while extending 45 → 70 questions. */
+(()=>{const js=document.createElement('script');js.src='quiz-extra.js';document.body.appendChild(js)})();
