@@ -39,7 +39,7 @@
 })();
 
 /* AeroNata guide loader — bump this version whenever avatar assets change. */
-(()=>{const v='20261018-2000';const css=document.createElement('link');css.rel='stylesheet';css.href='avatar.css?v='+v;document.head.appendChild(css);const start=()=>{const js=document.createElement('script');js.src='avatar.js?v='+v;document.body.appendChild(js)};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start()})();
+(()=>{const v='20261018-2010';const css=document.createElement('link');css.rel='stylesheet';css.href='avatar.css?v='+v;document.head.appendChild(css);const start=()=>{const js=document.createElement('script');js.src='avatar.js?v='+v;document.body.appendChild(js)};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start()})();
 
 /* Expanded quiz bank loader — keeps the main script lean while extending 45 → 70 questions. */
 (()=>{const js=document.createElement('script');js.src='quiz-extra.js';document.body.appendChild(js)})();
