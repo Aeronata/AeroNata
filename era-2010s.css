@@ -1,0 +1,65 @@
+/* AeroNata — 2016 priority interface
+   Dark by design, with a deliberately old social-web / Orkut-era structure. */
+body[data-mode="2016"]{
+  --bg:#11101a;--surface:#1b1927;--surface2:#242136;--text:#f5f1fb;--muted:#b9adc8;
+  --line:#4c4263;--accent:#f07ab5;--accent2:#7668c7;--card-radius:5px;--shadow:0 10px 30px #0008;
+  color-scheme:dark;
+  background-color:#11101a;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),radial-gradient(circle at 20% 0%,#6d386955,transparent 35%);
+  background-size:18px 18px,18px 18px,100% 100%;
+  font-family:Arial,Tahoma,Manrope,sans-serif;
+}
+body[data-mode="2016"].light-override{--bg:#11101a;--surface:#1b1927;--surface2:#242136;--text:#f5f1fb;--muted:#b9adc8;--line:#4c4263;color-scheme:dark;background-color:#11101a;color:#f5f1fb}
+body[data-mode="2016"] .ambient{display:none}
+body[data-mode="2016"] .topbar{background:#171522f5;border-bottom:3px solid #6c5c92;backdrop-filter:none;box-shadow:0 2px 0 #09080d}
+body[data-mode="2016"] .brand{font-family:Tahoma,Arial,sans-serif;letter-spacing:-.04em}
+body[data-mode="2016"] .brand-logo{filter:saturate(.8) contrast(1.08)}
+body[data-mode="2016"] .main-nav{font-family:Tahoma,Arial,sans-serif;font-size:11px}
+body[data-mode="2016"] .main-nav a{color:#c8bce0;text-decoration:underline;text-underline-offset:3px}
+body[data-mode="2016"] .main-nav a:hover{color:#ff92c7}
+body[data-mode="2016"] .mode-trigger,body[data-mode="2016"] .icon-button,body[data-mode="2016"] .aeronata-id-button,body[data-mode="2016"] select{border-radius:3px;border:1px solid #5b4f73;background:linear-gradient(#302c42,#211e30);box-shadow:inset 0 1px #ffffff18,0 1px 2px #000;color:#f6f1fb}
+body[data-mode="2016"] .mode-panel{border-radius:4px;border:1px solid #66577f;background:#171522;box-shadow:4px 4px 0 #08070c,0 18px 60px #000b;backdrop-filter:none}
+body[data-mode="2016"] .mode-panel-head{background:#29243b;border-bottom:1px solid #5d5176}
+body[data-mode="2016"] .mode-grid button{border-radius:3px;background:#211e30;border:1px solid #463d5a}
+body[data-mode="2016"] .mode-grid button:hover{background:#302a43;border-color:#f07ab5}
+body[data-mode="2016"] .mode-2016-choice{order:-20}
+body[data-mode="2016"] .hero{position:relative}
+body[data-mode="2016"] .hero-copy,body[data-mode="2016"] .hero-art{border:1px solid #4d4361;background:#181622;box-shadow:3px 3px 0 #08070d}
+body[data-mode="2016"] .hero-copy{padding:28px;border-radius:4px}
+body[data-mode="2016"] .hero-art{border-radius:4px;overflow:hidden;background:linear-gradient(#211d31cc,#15131fdd),url('assets/2016/2016-capa1.jpg') center/cover}
+body[data-mode="2016"] .hero-art:before{border-radius:50%;opacity:.58;background:linear-gradient(135deg,#ff87bd,#795fc1 58%,#312752);box-shadow:0 0 70px #ee71ad55}
+body[data-mode="2016"] .gradient-text{background:linear-gradient(90deg,#ff9acb,#a896ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+body[data-mode="2016"] .eyebrow{color:#ff91c4;font-family:Tahoma,'DM Mono',monospace;letter-spacing:.08em}
+body[data-mode="2016"] .ticker{background:#201d2d;border-block:1px solid #544967}
+body[data-mode="2016"] .ticker div{font-family:Tahoma,Arial,sans-serif;color:#bdb1ce}
+body[data-mode="2016"] .section-heading{border-bottom:1px solid #4d4361;padding-bottom:12px}
+body[data-mode="2016"] .section-heading h2{font-family:Arial,Tahoma,sans-serif}
+body[data-mode="2016"] .search-box{border-radius:3px;background:#171522;border:1px solid #554a6b;box-shadow:inset 1px 1px #08070d}
+body[data-mode="2016"] .filter{border-radius:3px;background:#1d1a29;border-color:#4d4361}
+body[data-mode="2016"] .filter.active,body[data-mode="2016"] .filter:hover{background:#352c49;border-color:#e879b0}
+body[data-mode="2016"] .aesthetic-grid{gap:10px}
+body[data-mode="2016"] .aesthetic-card{border-radius:4px;border:1px solid #514665;background:#191722;box-shadow:2px 2px 0 #09080d;transition:background .15s,border-color .15s,transform .15s}
+body[data-mode="2016"] .aesthetic-card:hover{transform:translateY(-2px);background:#211e2e;border-color:#ef7db6}
+body[data-mode="2016"] .card-content h3{font-family:Tahoma,Arial,sans-serif;color:#f4edf9}
+body[data-mode="2016"] .category-tag,body[data-mode="2016"] .text-button,body[data-mode="2016"] .card-arrow{color:#ff8fc2}
+body[data-mode="2016"] .button{border-radius:3px;border:1px solid #645378;box-shadow:inset 0 1px #ffffff24,2px 2px 0 #09080d;font-family:Tahoma,Arial,sans-serif}
+body[data-mode="2016"] .button.primary{background:linear-gradient(#e77bae,#b65389);color:#fff}
+body[data-mode="2016"] .button.secondary{background:linear-gradient(#302b40,#211e2e)}
+body[data-mode="2016"] .experience-card,body[data-mode="2016"] .quiz-shell,body[data-mode="2016"] .about-points>*{border-radius:4px;background:#191722;border-color:#514665;box-shadow:2px 2px 0 #09080d}
+body[data-mode="2016"] .detail-card,body[data-mode="2016"] dialog{border-radius:4px!important;border-color:#5a4c70!important;background:#171522!important;box-shadow:5px 5px 0 #08070d,0 25px 80px #000c!important}
+body[data-mode="2016"] .detail-2016{outline:1px solid #f07ab566}
+body[data-mode="2016"] .detail-2016:before{content:'2016 • perfil visual • recados • comunidades';display:block;padding:8px 12px;background:#29243b;border-bottom:1px solid #5a4c70;color:#d7cbe8;font:10px Tahoma,Arial,sans-serif}
+body[data-mode="2016"] footer{border-top:3px solid #5a4c70;background:#15131e}
+body[data-mode="2016"] a:not(.button):hover{text-decoration:underline}
+
+/* 2016 2 — moon variant: same old-web shell, cooler night palette + alternate banner/music via JS. */
+body[data-mode="2016"].mode-2016-alt{--accent:#82a8ff;--accent2:#6558b5;background-image:linear-gradient(rgba(130,168,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(130,168,255,.018) 1px,transparent 1px),radial-gradient(circle at 75% 0%,#334a8055,transparent 38%)}
+body[data-mode="2016"].mode-2016-alt .hero-art{background:linear-gradient(#15192ccc,#0e101bdd),url('assets/2016 2/2016-2-banner.jpg') center/cover}
+body[data-mode="2016"].mode-2016-alt .eyebrow,body[data-mode="2016"].mode-2016-alt .category-tag,body[data-mode="2016"].mode-2016-alt .text-button,body[data-mode="2016"].mode-2016-alt .card-arrow{color:#9ab8ff}
+body[data-mode="2016"].mode-2016-alt .button.primary{background:linear-gradient(#738bd4,#554b9e)}
+body[data-mode="2016"].mode-2016-alt .main-nav a:hover{color:#9ab8ff}
+body[data-mode="2016"].mode-2016-alt .filter.active,body[data-mode="2016"].mode-2016-alt .filter:hover,body[data-mode="2016"].mode-2016-alt .aesthetic-card:hover{border-color:#839fe9}
+
+.mode-2016-choice i{background:linear-gradient(135deg,#ff8fc4,#7564c8)!important;box-shadow:inset 0 0 0 1px #ffffff55}
+@media(max-width:760px){body[data-mode="2016"] .hero-copy{padding:20px}body[data-mode="2016"] .hero-art{min-height:300px}.detail-2016:before{font-size:9px}}
+@media(prefers-reduced-motion:reduce){body[data-mode="2016"] *{scroll-behavior:auto!important}}
