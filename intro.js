@@ -38,8 +38,8 @@
   document.addEventListener('click',e=>{const card=e.target.closest('[data-id]');if(!card)return;const dialog=document.getElementById('detailDialog');if(card.dataset.id==='technozen')requestAnimationFrame(()=>dialog?.classList.add('technozen-detail'));else dialog?.classList.remove('technozen-detail')},true);
 })();
 
-/* AeroNata guide loader — versioned so mobile browsers never keep stale guide CSS/JS. */
-(()=>{const v='20261018-1927';const css=document.createElement('link');css.rel='stylesheet';css.href='avatar.css?v='+v;document.head.appendChild(css);const start=()=>{const js=document.createElement('script');js.src='avatar.js?v='+v;document.body.appendChild(js)};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start()})();
+/* AeroNata guide loader — bump this version whenever avatar assets change. */
+(()=>{const v='20261018-1940';const css=document.createElement('link');css.rel='stylesheet';css.href='avatar.css?v='+v;document.head.appendChild(css);const start=()=>{const js=document.createElement('script');js.src='avatar.js?v='+v;document.body.appendChild(js)};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start()})();
 
 /* Expanded quiz bank loader — keeps the main script lean while extending 45 → 70 questions. */
 (()=>{const js=document.createElement('script');js.src='quiz-extra.js';document.body.appendChild(js)})();
