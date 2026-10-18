@@ -25,7 +25,7 @@
     features:['Filtros rosa, roxo, azul e luz solar estourada','Palmeiras, verão, cafés, parques e fotografias casuais','iPhone, fones, câmeras compactas, emojis e objetos da época','Imagem comprimida, granulado e tratamento típico das redes sociais'],
     culture:'É uma memória da internet cotidiana de meados dos anos 2010: fotos de celular, perfis pessoais, feeds coloridos, música, viagens idealizadas e pequenos objetos que definiam a época.',
     evolution:'O visual foi sendo substituído por câmeras mais limpas, feeds mais padronizados e interfaces cada vez mais minimalistas. Hoje, suas imperfeições ajudam a dar a sensação de uma internet antiga e mais pessoal.',
-    curiosity:'No AeroNata, 2016 recebe tratamento especial: sua interface mistura a nostalgia visual da época com a web social antiga, inspirada em páginas de perfil, recados e comunidades.'
+    curiosity:'No AeroNata, 2016 recebe tratamento especial para lembrar a internet visual de meados dos anos 2010: fotos comprimidas, filtros fortes, wallpapers, verão, música e uma sensação mais pessoal.'
   };
 
   const body=document.body;
@@ -34,21 +34,18 @@
   const toggle=document.getElementById('themeToggle');
   let alt2016=false;
 
-  /* Catalog entries: both are real aesthetics; 2016 gets first position. */
   if (typeof aesthetics !== 'undefined') {
     for (const id of ['2016','paris-2010s']) { const i=aesthetics.findIndex(a=>a.id===id); if(i>=0)aesthetics.splice(i,1); }
     aesthetics.unshift(y2016,paris);
     if(typeof renderCards==='function')renderCards();
   }
 
-  /* Audio registry used by the base player. */
   if (typeof themeTracks !== 'undefined') {
     themeTracks['2016']={name:'2016',src:'assets/2016/2016-tema.mp3'};
     themeTracks['2016-2']={name:'2016 2',src:'assets/2016 2/2016-2-tema.mp3'};
     themeTracks['paris-2010s']={name:'Paris 2010s',src:'assets/Paris/Paris-tema.mp3'};
   }
 
-  /* Reconcile picker explicitly instead of relying on one insertion pass. */
   function ensureTheme(id,label,cls,position){
     if(select && !select.querySelector(`option[value="${id}"]`)){
       const o=document.createElement('option');o.value=id;o.textContent=label;
@@ -60,13 +57,8 @@
       grid.insertBefore(b,grid.children[position]||null);
     }
   }
-  function ensurePicker(){
-    ensureTheme('2016','2016','mode-2016-choice',0);
-    ensureTheme('paris-2010s','Paris 2010s','mode-paris-choice',1);
-  }
-  ensurePicker();
-  requestAnimationFrame(ensurePicker);
-  setTimeout(ensurePicker,250);
+  function ensurePicker(){ensureTheme('2016','2016','mode-2016-choice',0);ensureTheme('paris-2010s','Paris 2010s','mode-paris-choice',1);}
+  ensurePicker();requestAnimationFrame(ensurePicker);setTimeout(ensurePicker,250);
 
   function syncCounts(){
     const total=typeof aesthetics!=='undefined'?aesthetics.length:0;
@@ -77,43 +69,38 @@
   syncCounts();
 
   function set2016Variant(alt,play=true){
-    alt2016=Boolean(alt);
-    body.classList.toggle('mode-2016-alt',alt2016);
-    body.classList.remove('light-override');
-    if(body.dataset.mode==='2016'&&toggle){
-      toggle.textContent=alt2016?'☀':'🌙';
-      toggle.title=alt2016?'Voltar para 2016':'Entrar em 2016 2';
-      toggle.setAttribute('aria-label',toggle.title);
-    }
+    alt2016=Boolean(alt);body.classList.toggle('mode-2016-alt',alt2016);body.classList.remove('light-override');
+    if(body.dataset.mode==='2016'&&toggle){toggle.textContent=alt2016?'☀':'🌙';toggle.title=alt2016?'Voltar para 2016':'Entrar em 2016 2';toggle.setAttribute('aria-label',toggle.title);}
     const item=typeof aesthetics!=='undefined'?aesthetics.find(a=>a.id==='2016'):null;
     if(item)item.banner=alt2016?'assets/2016 2/2016-2-banner.jpg':'assets/2016/2016-banner.jpg';
     if(play&&body.dataset.mode==='2016'&&typeof loadAndMaybePlay==='function')loadAndMaybePlay(alt2016?'2016-2':'2016',true);
   }
 
   function syncMode(){
-    const is2016=body.dataset.mode==='2016';
-    const isParis=body.dataset.mode==='paris-2010s';
-    body.classList.toggle('mode-2016-active',is2016);
-    body.classList.toggle('mode-paris-active',isParis);
-    if(is2016){body.classList.remove('light-override');set2016Variant(alt2016,false);}
-    else body.classList.remove('mode-2016-alt');
+    const is2016=body.dataset.mode==='2016';const isParis=body.dataset.mode==='paris-2010s';
+    body.classList.toggle('mode-2016-active',is2016);body.classList.toggle('mode-paris-active',isParis);
+    if(is2016){body.classList.remove('light-override');set2016Variant(alt2016,false);}else body.classList.remove('mode-2016-alt');
   }
-  new MutationObserver(syncMode).observe(body,{attributes:true,attributeFilter:['data-mode']});
-  syncMode();
+  new MutationObserver(syncMode).observe(body,{attributes:true,attributeFilter:['data-mode']});syncMode();
 
-  /* Intercept the global light/dark button only while 2016 is active.
-     This prevents the base handler from applying light-override before switching 2016 ↔ 2016 2. */
+  /* Paris is injected after the base script, so its first selection can beat the base audio registry timing.
+     Capture the picker click and explicitly start its registered track after the normal mode change finishes. */
+  grid?.addEventListener('click',event=>{
+    const choice=event.target.closest('[data-mode-choice="paris-2010s"]');if(!choice)return;
+    setTimeout(()=>{if(body.dataset.mode==='paris-2010s'&&typeof loadAndMaybePlay==='function')loadAndMaybePlay('paris-2010s',true);},40);
+  },true);
+  select?.addEventListener('change',()=>{
+    if(select.value==='paris-2010s')setTimeout(()=>{if(typeof loadAndMaybePlay==='function')loadAndMaybePlay('paris-2010s',true);},40);
+  });
+
   toggle?.addEventListener('click',event=>{
     if(body.dataset.mode!=='2016')return;
-    event.preventDefault();event.stopImmediatePropagation();
-    set2016Variant(!alt2016,true);
+    event.preventDefault();event.stopImmediatePropagation();set2016Variant(!alt2016,true);
   },true);
 
-  /* Detail styling follows the selected card. */
   document.addEventListener('click',e=>{
     const card=e.target.closest('[data-id]');if(!card)return;
     const dialog=document.getElementById('detailDialog');
-    dialog?.classList.toggle('detail-2016',card.dataset.id==='2016');
-    dialog?.classList.toggle('detail-paris',card.dataset.id==='paris-2010s');
+    dialog?.classList.toggle('detail-2016',card.dataset.id==='2016');dialog?.classList.toggle('detail-paris',card.dataset.id==='paris-2010s');
   },true);
 })();
