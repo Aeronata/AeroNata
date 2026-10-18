@@ -7,14 +7,9 @@ const THEME_GUIDE={neon:{text:'Neon futurista ✦ Roxo, brilho e uma visão digi
 const setup=document.createElement('div');setup.className='an-avatar-setup';setup.hidden=!!current();setup.innerHTML=`<div class="an-avatar-card"><p class="eyebrow">✦ GUIA AERONATA</p><h2>Escolha seu companheiro.</h2><p>Ele vai te acompanhar pelo arquivo, mostrar onde as coisas ficam e avisar quando uma interface tiver algo especial.</p><div class="an-avatar-grid">${SKINS.map(s=>`<button class="an-avatar-skin" type="button" data-skin="${s.id}" aria-label="${s.label}"><img src="${s.src}" alt="${s.label}"></button>`).join('')}</div><button class="an-avatar-confirm" type="button" disabled>Esse será meu guia ✦</button><small>Você poderá trocar depois.</small></div>`;document.body.appendChild(setup);
 let picked=null,wordTimer=null,moonTimer=null,closeTimer=null,lastMode=document.body.dataset.mode||'';
 function initThemeHint(){
+  const legacyHint=$('#themeHint');
+  if(legacyHint) legacyHint.remove();
   document.body.classList.add('an-first-theme-hint');
-  const realHint=$('#themeHint');
-  if(realHint){
-    realHint.hidden=false;
-    realHint.classList.remove('is-hiding');
-    const keepVisible=new MutationObserver(()=>{if(realHint.hidden)realHint.hidden=false;if(realHint.classList.contains('is-hiding'))realHint.classList.remove('is-hiding')});
-    keepVisible.observe(realHint,{attributes:true,attributeFilter:['hidden','class']});
-  }
 }
 setup.addEventListener('click',e=>{const b=e.target.closest('[data-skin]');if(!b)return;picked=b.dataset.skin;setup.querySelectorAll('.an-avatar-skin').forEach(x=>x.classList.toggle('selected',x===b));$('.an-avatar-confirm',setup).disabled=false});
 $('.an-avatar-confirm',setup)?.addEventListener('click',()=>{if(!picked)return;localStorage.setItem(KEY,picked);setup.hidden=true;mount(true)});
