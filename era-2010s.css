@@ -1,82 +1,46 @@
 /* AeroNata — Paris 2010s + 2016 full themes */
 
-/* PARIS 2010s — independent theme. The uploaded banner is the visual centerpiece. */
-body[data-mode="paris-2010s"]{
- --bg:#140d15;--surface:#211621;--surface2:#2b1c2a;--text:#fff3f8;--muted:#d0b5c7;--line:#70485f;--accent:#f39ac5;--accent2:#a77bc8;--card-radius:12px;--shadow:0 18px 55px #0009;color-scheme:dark;
- background:#140d15 url('assets/Paris/Paris-capa1.jpg') center/cover fixed no-repeat;
- font-family:Georgia,'Times New Roman',serif;
-}
+/* PARIS 2010s — romantic early-2010s internet. */
+body[data-mode="paris-2010s"]{--bg:#140d15;--surface:#211621;--surface2:#2b1c2a;--text:#fff3f8;--muted:#d0b5c7;--line:#70485f;--accent:#f39ac5;--accent2:#a77bc8;--card-radius:12px;--shadow:0 18px 55px #0009;color-scheme:dark;background:#140d15 url('assets/Paris/Paris-capa1.jpg') center/cover fixed no-repeat;font-family:Georgia,'Times New Roman',serif}
 body[data-mode="paris-2010s"]:after{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(#170e16d8,#120b12f2),radial-gradient(circle at 70% 15%,#ef9bc72b,transparent 34%)}
 body[data-mode="paris-2010s"] .ambient{opacity:.1;filter:blur(100px)}
 body[data-mode="paris-2010s"] .topbar{background:#1b111be8;border-bottom:1px solid #70485f;backdrop-filter:blur(10px)}
 body[data-mode="paris-2010s"] .main-nav,body[data-mode="paris-2010s"] .button,body[data-mode="paris-2010s"] .mode-picker{font-family:Arial,sans-serif}
 body[data-mode="paris-2010s"] .gradient-text{background:linear-gradient(95deg,#fff0f6,#f29ac6 48%,#c1a2e2);-webkit-background-clip:text;background-clip:text;color:transparent}
 body[data-mode="paris-2010s"] .hero-art{overflow:hidden;border:1px solid #f2b3d34f;border-radius:18px;background:linear-gradient(180deg,#20111a20,#160d15a0),url('assets/Paris/Paris-banner.png') center/cover no-repeat!important;box-shadow:0 25px 70px #0009}
-body[data-mode="paris-2010s"] .hero-art>*{opacity:.2}
-body[data-mode="paris-2010s"] .hero-art:before{display:none}
+body[data-mode="paris-2010s"] .hero-art>*{opacity:.2}body[data-mode="paris-2010s"] .hero-art:before{display:none}
 body[data-mode="paris-2010s"] .glass-card,body[data-mode="paris-2010s"] .aesthetic-card,body[data-mode="paris-2010s"] .experience-card,body[data-mode="paris-2010s"] .quiz-shell{background:#251721d9;border-color:#70485f}
-body[data-mode="paris-2010s"] .button.primary{background:linear-gradient(120deg,#e98ab9,#a26fc0)}
-body[data-mode="paris-2010s"] .mode-panel{background:#211621f5;border-color:#7b506a}
-body[data-mode="paris-2010s"] footer{background:#120b12;border-top-color:#624057}
-.mode-paris-choice i{background:linear-gradient(135deg,#f4a1c8,#b28bd2)!important;box-shadow:inset 0 0 0 1px #ffffff55}
+body[data-mode="paris-2010s"] .button.primary{background:linear-gradient(120deg,#e98ab9,#a26fc0)}body[data-mode="paris-2010s"] .mode-panel{background:#211621f5;border-color:#7b506a}body[data-mode="paris-2010s"] footer{background:#120b12;border-top-color:#624057}.mode-paris-choice i{background:linear-gradient(135deg,#f4a1c8,#b28bd2)!important;box-shadow:inset 0 0 0 1px #ffffff55}
 
-/* 2016 — priority theme. Dark old-social-web shell + the actual 2016 imagery. */
-body[data-mode="2016"]{
- --bg:#0d0c14;--surface:#171522;--surface2:#242034;--text:#f7f3fb;--muted:#bcb0c8;--line:#5d4c72;--accent:#f07ab5;--accent2:#7566c5;--card-radius:3px;--shadow:0 10px 30px #000a;color-scheme:dark!important;
- background-color:#0d0c14!important;
- background-image:linear-gradient(#0d0c14d9,#0d0c14ee),url('assets/2016/2016-capa1.jpg')!important;
- background-size:cover!important;background-position:center!important;background-attachment:fixed!important;
- font-family:Tahoma,Verdana,Arial,sans-serif!important;color:#f7f3fb;
-}
-body[data-mode="2016"].light-override{--bg:#0d0c14;--surface:#171522;--surface2:#242034;--text:#f7f3fb;--muted:#bcb0c8;--line:#5d4c72;color-scheme:dark!important;background-color:#0d0c14!important;color:#f7f3fb!important}
-body[data-mode="2016"] .ambient{display:none}
-body[data-mode="2016"] .topbar{background:#15131ff5;border-bottom:3px solid #756493;backdrop-filter:none;box-shadow:0 2px 0 #050408}
-body[data-mode="2016"] .brand{font-family:Tahoma,Verdana,Arial,sans-serif;letter-spacing:-.04em}
-body[data-mode="2016"] .main-nav{font:12px Tahoma,Verdana,Arial,sans-serif}
-body[data-mode="2016"] .main-nav a{color:#d4c7e4;text-decoration:underline;text-underline-offset:3px}
-body[data-mode="2016"] .main-nav a:hover{color:#ff91c4}
-body[data-mode="2016"] .mode-trigger,body[data-mode="2016"] .icon-button,body[data-mode="2016"] .aeronata-id-button,body[data-mode="2016"] select{border-radius:2px;border:1px solid #746389;background:linear-gradient(#39324d,#211d2e);box-shadow:inset 1px 1px #ffffff29,inset -1px -1px #08070b,1px 1px #000;color:#f8f2fb}
-body[data-mode="2016"] .mode-panel{border-radius:2px;border:1px solid #75638d;background:#15131f;box-shadow:4px 4px 0 #060509,0 18px 60px #000c;backdrop-filter:none}
-body[data-mode="2016"] .mode-panel-head{background:#2d2740;border-bottom:1px solid #67577e}
-body[data-mode="2016"] .mode-grid button{border-radius:2px;background:linear-gradient(#2c273d,#1c1928);border:1px solid #574966;box-shadow:inset 1px 1px #ffffff16}
-body[data-mode="2016"] .mode-grid button:hover{background:#39304d;border-color:#f07ab5}
-body[data-mode="2016"] .hero{position:relative}
-body[data-mode="2016"] .hero-copy{padding:28px;border:1px solid #5d4c72;border-radius:2px;background:#171522ee;box-shadow:3px 3px 0 #060509}
-/* This is the uploaded 2016 banner, not the generic AeroNata orb composition. */
-body[data-mode="2016"] .hero-art{min-height:470px;border:1px solid #6c577e;border-radius:2px;overflow:hidden;background:linear-gradient(180deg,#17121c0c,#0d0b12a8),url('assets/2016/2016-banner.jpg') center/cover no-repeat!important;box-shadow:3px 3px 0 #060509,0 18px 55px #0008}
-body[data-mode="2016"] .hero-art>*{opacity:.12!important}
-body[data-mode="2016"] .hero-art:before{display:none!important}
-body[data-mode="2016"] .gradient-text{background:linear-gradient(90deg,#ff9acb,#a896ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-body[data-mode="2016"] .eyebrow{color:#ff91c4;font:12px Tahoma,Verdana,Arial,sans-serif;letter-spacing:.04em}
-body[data-mode="2016"] .ticker{background:#201c2b;border-block:1px solid #5d4c72}
-body[data-mode="2016"] .section-heading{border-bottom:1px solid #5d4c72;padding-bottom:12px}
-body[data-mode="2016"] .section-heading h2{font-family:Tahoma,Verdana,Arial,sans-serif}
-body[data-mode="2016"] .search-box{border-radius:2px;background:#15131f;border:1px solid #5d4c72;box-shadow:inset 1px 1px #050408}
-body[data-mode="2016"] .filter{border-radius:2px;background:linear-gradient(#2d273d,#1a1724);border-color:#5d4c72;box-shadow:inset 1px 1px #ffffff12}
-body[data-mode="2016"] .filter.active,body[data-mode="2016"] .filter:hover{background:#3a2f4e;border-color:#ee7ab3}
-body[data-mode="2016"] .aesthetic-grid{gap:9px}
-body[data-mode="2016"] .aesthetic-card{border-radius:2px;border:1px solid #5d4c72;background:#17151fee;box-shadow:2px 2px 0 #060509;transition:background .15s,border-color .15s,transform .15s}
-body[data-mode="2016"] .aesthetic-card:hover{transform:translateY(-2px);background:#211d2d;border-color:#ef7db6}
-body[data-mode="2016"] .card-content h3{font-family:Tahoma,Verdana,Arial,sans-serif;color:#f4edf9}
-body[data-mode="2016"] .category-tag,body[data-mode="2016"] .text-button,body[data-mode="2016"] .card-arrow{color:#ff8fc2}
-body[data-mode="2016"] .button{border-radius:2px;border:1px solid #705b82;box-shadow:inset 1px 1px #ffffff29,inset -1px -1px #07060a,2px 2px 0 #060509;font-family:Tahoma,Verdana,Arial,sans-serif}
-body[data-mode="2016"] .button.primary{background:linear-gradient(#ed83b6,#a84b7c);color:#fff}
-body[data-mode="2016"] .button.secondary{background:linear-gradient(#342d45,#211d2d)}
-body[data-mode="2016"] .experience-card,body[data-mode="2016"] .quiz-shell,body[data-mode="2016"] .about-points>*{border-radius:2px;background:#17151fee;border-color:#5d4c72;box-shadow:2px 2px 0 #060509}
-body[data-mode="2016"] .detail-card,body[data-mode="2016"] dialog{border-radius:2px!important;border-color:#66527b!important;background:#15131f!important;box-shadow:5px 5px 0 #060509,0 25px 80px #000d!important}
-body[data-mode="2016"] .detail-2016{outline:1px solid #f07ab566}
-body[data-mode="2016"] .detail-2016:before{content:'2016  |  início  |  perfil  |  recados  |  fotos  |  comunidades';display:block;padding:8px 12px;background:linear-gradient(#382f4d,#282238);border-bottom:1px solid #715f86;color:#e4d8ee;font:11px Tahoma,Verdana,Arial,sans-serif}
-body[data-mode="2016"] footer{border-top:3px solid #66527b;background:#121019}
-body[data-mode="2016"] a:not(.button):hover{text-decoration:underline}
+/* 2016 — no Orkut imitation. A dreamy mid-2010s mobile-internet memory: filtered photos, summer, wallpapers, music and compressed color. */
+body[data-mode="2016"]{--bg:#15101b;--surface:#211827;--surface2:#302137;--text:#fff7fb;--muted:#d2bdce;--line:#8b587b;--accent:#ff78b4;--accent2:#9d7cf2;--card-radius:18px;--shadow:0 18px 55px #0008;color-scheme:dark!important;background-color:#15101b!important;background-image:linear-gradient(180deg,#2a1525a8,#100d18e8),url('assets/2016/2016-capa1.jpg')!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important;font-family:Arial,'Helvetica Neue',sans-serif!important;color:#fff7fb}
+body[data-mode="2016"].light-override{color-scheme:dark!important;background-color:#15101b!important;color:#fff7fb!important}
+body[data-mode="2016"] .ambient{display:block;opacity:.16;filter:blur(110px)}
+body[data-mode="2016"] .topbar{background:#1a121ddc;border-bottom:1px solid #a8648a80;backdrop-filter:blur(15px);box-shadow:0 10px 35px #0003}
+body[data-mode="2016"] .brand,body[data-mode="2016"] .main-nav,body[data-mode="2016"] .section-heading h2,body[data-mode="2016"] .card-content h3{font-family:Arial,'Helvetica Neue',sans-serif}
+body[data-mode="2016"] .main-nav a{color:#ead9e6;text-decoration:none}body[data-mode="2016"] .main-nav a:hover{color:#ff91c4}
+body[data-mode="2016"] .mode-trigger,body[data-mode="2016"] .icon-button,body[data-mode="2016"] .aeronata-id-button,body[data-mode="2016"] select{border-radius:14px;border:1px solid #bd789c73;background:linear-gradient(180deg,#ffffff12,#ffffff08);box-shadow:inset 0 1px #ffffff20,0 8px 22px #0004;color:#fff7fb;backdrop-filter:blur(12px)}
+body[data-mode="2016"] .mode-panel{border-radius:18px;border:1px solid #a8688b88;background:#211625f2;box-shadow:0 24px 70px #000a;backdrop-filter:blur(18px)}
+body[data-mode="2016"] .mode-panel-head{background:#ffffff08;border-bottom:1px solid #ffffff13}body[data-mode="2016"] .mode-grid button{border-radius:12px;background:#ffffff08;border:1px solid #ffffff12;box-shadow:none}body[data-mode="2016"] .mode-grid button:hover{background:#ffffff10;border-color:#ff82b9}
+body[data-mode="2016"] .hero{position:relative}body[data-mode="2016"] .hero-copy{padding:30px;border:1px solid #bb73955c;border-radius:24px;background:linear-gradient(145deg,#211723e8,#17121dde);box-shadow:0 24px 65px #0006;backdrop-filter:blur(10px)}
+body[data-mode="2016"] .hero-art{min-height:470px;border:1px solid #ffffff29;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,#24131d0a,#130d17a1),url('assets/2016/2016-banner.jpg') center/cover no-repeat!important;box-shadow:0 25px 65px #0008}
+body[data-mode="2016"] .hero-art>*{opacity:.08!important}body[data-mode="2016"] .hero-art:before{display:none!important}
+body[data-mode="2016"] .gradient-text{background:linear-gradient(90deg,#ff83bb,#d888dd 52%,#9f92ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+body[data-mode="2016"] .eyebrow{color:#ff9ac6;letter-spacing:.12em}.mode-2016-choice i{background:linear-gradient(135deg,#ff8fc4,#7564c8)!important;box-shadow:inset 0 0 0 1px #ffffff55}
+body[data-mode="2016"] .ticker{background:#211622cc;border-block:1px solid #a15f8252;backdrop-filter:blur(10px)}body[data-mode="2016"] .section-heading{border-bottom:1px solid #ffffff18;padding-bottom:12px}
+body[data-mode="2016"] .search-box{border-radius:16px;background:#1c151fdd;border:1px solid #9b668264;box-shadow:inset 0 1px #ffffff0c}.filter:is(body[data-mode="2016"] *){border-radius:999px}
+body[data-mode="2016"] .filter{background:#ffffff08;border-color:#ffffff17;box-shadow:none}body[data-mode="2016"] .filter.active,body[data-mode="2016"] .filter:hover{background:#ff78b41b;border-color:#ff8cbd}
+body[data-mode="2016"] .aesthetic-grid{gap:18px}body[data-mode="2016"] .aesthetic-card{border-radius:18px;border:1px solid #ffffff18;background:#201722dc;box-shadow:0 16px 45px #0005;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}body[data-mode="2016"] .aesthetic-card:hover{transform:translateY(-4px);border-color:#ed8ab7;box-shadow:0 22px 50px #0007}
+body[data-mode="2016"] .category-tag,body[data-mode="2016"] .text-button,body[data-mode="2016"] .card-arrow{color:#ff96c2}
+body[data-mode="2016"] .button{border-radius:15px;border:1px solid #ffffff20;box-shadow:inset 0 1px #ffffff2c,0 10px 25px #0003;font-family:Arial,'Helvetica Neue',sans-serif}body[data-mode="2016"] .button.primary{background:linear-gradient(120deg,#f06ca8,#a46edb);color:#fff}body[data-mode="2016"] .button.secondary{background:#ffffff08}
+body[data-mode="2016"] .experience-card,body[data-mode="2016"] .quiz-shell,body[data-mode="2016"] .about-points>*{border-radius:18px;background:#201722dc;border-color:#ffffff18;box-shadow:0 18px 50px #0005}
+body[data-mode="2016"] .detail-card,body[data-mode="2016"] dialog{border-radius:20px!important;border-color:#b16d9255!important;background:#1a131ddd!important;box-shadow:0 28px 80px #000c!important;backdrop-filter:blur(16px)}body[data-mode="2016"] .detail-2016{outline:1px solid #f07ab544}body[data-mode="2016"] .detail-2016:before{content:'2016 · fotos · música · verão · wallpapers · internet';display:block;padding:10px 14px;background:#ffffff08;border-bottom:1px solid #ffffff13;color:#e7cddd;font-size:11px;letter-spacing:.08em}
+body[data-mode="2016"] footer{border-top:1px solid #ffffff16;background:#130e16e8}
 
-/* 2016 2 — moon variant, never a separate picker item/card. */
-body[data-mode="2016"].mode-2016-alt{--accent:#8baaff;--accent2:#6558b5;background-image:linear-gradient(#080b15d4,#080b15ed),url('assets/2016 2/2016-2-banner.jpg')!important}
-body[data-mode="2016"].mode-2016-alt .hero-art{background:linear-gradient(180deg,#0e12220d,#080b15a8),url('assets/2016 2/2016-2-banner.jpg') center/cover no-repeat!important}
-body[data-mode="2016"].mode-2016-alt .eyebrow,body[data-mode="2016"].mode-2016-alt .category-tag,body[data-mode="2016"].mode-2016-alt .text-button,body[data-mode="2016"].mode-2016-alt .card-arrow{color:#9ab8ff}
-body[data-mode="2016"].mode-2016-alt .button.primary{background:linear-gradient(#7891da,#554b9e)}
-body[data-mode="2016"].mode-2016-alt .main-nav a:hover{color:#9ab8ff}
-body[data-mode="2016"].mode-2016-alt .filter.active,body[data-mode="2016"].mode-2016-alt .filter:hover,body[data-mode="2016"].mode-2016-alt .aesthetic-card:hover{border-color:#839fe9}
-.mode-2016-choice i{background:linear-gradient(135deg,#ff8fc4,#7564c8)!important;box-shadow:inset 0 0 0 1px #ffffff55}
+/* 2016 2 — same memory after dark: cooler blue/purple, late-night scrolling and city-light mood. */
+body[data-mode="2016"].mode-2016-alt{--accent:#8eb0ff;--accent2:#766be0;--line:#6379ad;background-image:linear-gradient(180deg,#07101cb5,#080b15ee),url('assets/2016 2/2016-2-banner.jpg')!important}
+body[data-mode="2016"].mode-2016-alt .topbar{background:#0c1220e5;border-bottom-color:#728bc96b}body[data-mode="2016"].mode-2016-alt .hero-copy{background:linear-gradient(145deg,#101726e8,#0c101dde);border-color:#758cc25c}body[data-mode="2016"].mode-2016-alt .hero-art{background:linear-gradient(180deg,#0e12220d,#080b15a8),url('assets/2016 2/2016-2-banner.jpg') center/cover no-repeat!important}
+body[data-mode="2016"].mode-2016-alt .gradient-text{background:linear-gradient(90deg,#9ec3ff,#9f9aff 50%,#c18cff);-webkit-background-clip:text;background-clip:text;color:transparent}body[data-mode="2016"].mode-2016-alt .eyebrow,body[data-mode="2016"].mode-2016-alt .category-tag,body[data-mode="2016"].mode-2016-alt .text-button,body[data-mode="2016"].mode-2016-alt .card-arrow{color:#a7c3ff}body[data-mode="2016"].mode-2016-alt .button.primary{background:linear-gradient(120deg,#759ce5,#7465cf)}body[data-mode="2016"].mode-2016-alt .filter.active,body[data-mode="2016"].mode-2016-alt .filter:hover,body[data-mode="2016"].mode-2016-alt .aesthetic-card:hover{border-color:#86a5ed}
 
-@media(max-width:760px){body[data-mode="2016"] .hero-copy{padding:20px}body[data-mode="2016"] .hero-art,body[data-mode="paris-2010s"] .hero-art{min-height:330px}.detail-2016:before{font-size:9px;overflow:auto;white-space:nowrap}}
+@media(max-width:760px){body[data-mode="2016"] .hero-copy{padding:22px}body[data-mode="2016"] .hero-art,body[data-mode="paris-2010s"] .hero-art{min-height:330px}.detail-2016:before{font-size:9px;overflow:auto;white-space:nowrap}}
 @media(prefers-reduced-motion:reduce){body[data-mode="2016"] *,body[data-mode="paris-2010s"] *{scroll-behavior:auto!important}}
