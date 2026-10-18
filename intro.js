@@ -43,3 +43,6 @@
 
 /* Expanded quiz bank loader — keeps the main script lean while extending 45 → 70 questions. */
 (()=>{const js=document.createElement('script');js.src='quiz-extra.js';document.body.appendChild(js)})();
+
+/* Paris 2010s + priority 2016 interface */
+(()=>{const css=document.createElement('link');css.rel='stylesheet';css.href='era-2010s.css';document.head.appendChild(css);const js=document.createElement('script');js.src='era-2010s.js';document.body.appendChild(js)})();
