@@ -46,3 +46,6 @@
 
 /* Paris 2010s + priority 2016 interface */
 (()=>{const css=document.createElement('link');css.rel='stylesheet';css.href='era-2010s.css';document.head.appendChild(css);const js=document.createElement('script');js.src='era-2010s.js';document.body.appendChild(js)})();
+
+/* Hidden AeroNata Snake — avatar x5. */
+(()=>{const js=document.createElement('script');js.src='aeronata-snake.js?v=20261020-1';document.body.appendChild(js)})();
